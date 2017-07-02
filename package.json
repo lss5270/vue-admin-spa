@@ -1,12 +1,16 @@
 {
   "name": "vue-admin-spa",
   "version": "1.0.0",
-  "description": "technology stack: vue + vue-resouce + vue-router + vuex(large spa) + element-ui + webpack + npm ",
-  "keywords":"vue-admin-spa,vue-admin-system,admin-system,vue,vue-resouce,vue-router,vuex(large spa),element-ui,webpack,npm",
+  "description": "a vue management system based on ：vue + vue-resouce + vue-router + vuex + element-ui + webpack + npm",
+  "keywords":["vue-admin-spa","vue-admin-system","admin-system","vue","vue-resouce","vue-router","vuex(large spa)","element-ui","webpack","npm"],
   "homepage":"https://github.com/lss5270/vue-element-admin",
   "author": "lss <81438234@qq.com> (https://github.com/lss5270/vue-element-admin)",
   "license": "MIT",
-  "private": true,
+  "bugs": {
+    "url": "https://github.com/lss5270/vue-admin-spa/issues"
+  },
+  "homepage": "",
+
   "scripts": {
     "dev": "node build/dev-server.js",
     "build:prod": "cross-env NODE_ENV=production node build/build.js",
