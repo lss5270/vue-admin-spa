@@ -3,9 +3,6 @@
 //把全体接口封装在的前端配置文件（序号与接口文档一一对应），多个环境配置时可快速切换整站式的全部接口，不用逐个页面去改。
 const config = require('../../config');
 
-// console.log('命令参数为2：',process.env.NODE_ENV,process.env.NODE_ENV !== 'development');
-
-
 let url = {
     apiUrl: "/ccp-web/api", //接口路径
     //ctxPath: "/ccp-web/dist", //tomcat服务dist目录
