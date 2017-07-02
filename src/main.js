@@ -38,7 +38,7 @@ Object.keys(filters).forEach(key => {
 
 //加载用户主题
 if( Cookies.get('themeValue') ){
-    global.changeTheme(themeValue);
+    global.changeTheme(Cookies.get('themeValue'));
 }
 
 //lss 2017-7-1。遍历vuex的权限列表，假如去到的路径未在true列表中，则直接重定向到401。

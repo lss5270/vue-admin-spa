@@ -12,7 +12,9 @@
         
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告</div>
-        <a href="/" class="bullshit__return-home">返回首页</a>
+        <p class=""><a href="/" class="bullshit__return-home" style="">返回首页</a></p>
+
+        <a href="https://github.com/lss5270/vue-admin-spa" class="bullshit__return-home">随便看看</a>
       </div>
     </div>
   </div>
@@ -188,7 +190,7 @@
       }
       &__return-home {
         display: block;
-        float: left;
+        /*float: left;*/
         width: 110px;
         height: 36px;
         background: #1482f0;

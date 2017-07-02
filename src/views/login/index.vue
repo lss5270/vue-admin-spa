@@ -19,8 +19,8 @@
                     登录
                 </el-button>
             </el-form-item>
-            <!-- <div class='tips'>admin账号为:admin@wallstreetcn.com 密码随便填</div>
-            <div class='tips'>editor账号:editor@wallstreetcn.com 密码随便填</div> -->
+            <div class='tips'>测试帐号为:81438234@qq.com 密码：123456</div>
+            
             <router-link to="/sendpwd" class="forget-pwd">
                 忘记密码?(或首次登录)
             </router-link>
@@ -47,6 +47,13 @@
             callback();
           }
         };
+        const validateAccount = (rule, value, callback) => {
+        if (value !== '81438234@qq.com') {
+              callback(new Error('帐号不存在！'));
+            } else {
+              callback();
+            }
+        };
         const validatePass = (rule, value, callback) => {
           if (value.length < 6) {
             callback(new Error('密码不能小于6位'));
@@ -54,21 +61,31 @@
             callback();
           }
         };
+        const validatePass2 = (rule, value, callback) => {
+          if ( md5('@lss'+value) !== md5('@lss123456') ) {
+                callback(new Error('密码错误！'));
+          } else {
+                callback();
+          }
+        };
+
         return {
-          loginForm: {
-            email: '81438234@qq.com',
-            password: '123456'
-          },
-          loginRules: {
-            email: [
-                { required: true, trigger: 'blur', validator: validateEmail }
-            ],
-            password: [
-                { required: true, trigger: 'blur', validator: validatePass }
-            ]
-          },
-          loading: false,
-          showDialog: false
+            loginForm: {
+                email: '81438234@qq.com',
+                password: '123456'
+            },
+            loginRules: {
+                email: [
+                    { required: true, trigger: 'blur', validator: validateEmail },
+                    {  trigger: 'blur' , validator: validateAccount}
+                ],
+                password: [
+                    { required: true, trigger: 'blur', validator: validatePass },
+                    {  trigger: 'blur' , validator: validatePass2}
+                ]
+            },
+            loading: false,
+            showDialog: false
         }
       },
       computed: {
@@ -78,44 +95,30 @@
       },
       methods: {
         handleLogin() {
-            // console.log('------',this.loginForm)
             
-            // this.$store.dispatch('LoginByEmail', this.loginForm).then(() => {
-            //     console.log('11====')
-            //     this.loading = false;
-            //     this.$router.push({ path: '/' });
-            //     // this.showDialog = true;
-            // }).catch(err => {
-            //     console.log('22====')
-            //     //this.$message.error(err);
-            //     //this.loading = false;
-            // });
-            // return false;
+            this.$refs.loginForm.validate(valid => {
+                if (valid) {
+                  this.loading = true;
+                    var  par = JSON.parse(JSON.stringify(this.loginForm)) ;
+                         par.password = md5('@lss'+par.password);
 
-            //alert(md5(5))
-          this.$refs.loginForm.validate(valid => {
-            if (valid) {
-              this.loading = true;
-                var  par = JSON.parse(JSON.stringify(this.loginForm)) ;
-                    par.password = md5('@lss'+par.password);
-
-              this.$store.dispatch('LoginByEmail', par).then(() => {
-                this.loading = false;
-               
-                console.log('登陆成功即将跳转--------')
-                this.$router.push({ path: '/' });
-               
-                    
-                // this.showDialog = true;
-              }).catch(err => {
-                this.$message.error(err);
-                this.loading = false;
-              });
-            } else {
-              console.log('error submit!!');
-              return false;
-            }
-          });
+                    this.$store.dispatch('LoginByEmail', par).then(() => {
+                    this.loading = false;
+                   
+                    console.log('登陆成功即将跳转--------')
+                    this.$router.push({ path: '/' });
+                   
+                        
+                    // this.showDialog = true;
+                  }).catch(err => {
+                    this.$message.error(err);
+                    this.loading = false;
+                  });
+                } else {
+                  console.log('error submit!!');
+                  return false;
+                }
+            });
         },
         afterQRScan() {
           // const hash = window.location.hash.slice(1);

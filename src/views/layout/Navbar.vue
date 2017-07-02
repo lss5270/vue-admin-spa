@@ -10,7 +10,7 @@
             <screenfull class='screenfull'></screenfull>
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
-                    <span class="user-name">{{userInfo.name}}</span>
+                    <span class="user-name">{{userInfo.nickname}}</span>
                     <img class="user-avatar" :src="userInfo.avatar+'?imageView2/1/w/80/h/80'">
                     <i class="el-icon-caret-bottom"></i>
                 </div>
@@ -21,7 +21,7 @@
                         </el-dropdown-item>
                     </router-link>
                     <el-dropdown-item >
-                            <span @click="">修改密码</span>
+                            <span @click="dialogFormVisible = true">修改密码</span>
                         </el-dropdown-item>
                     <!-- <router-link class='inlineBlock' to="/admin/profile"> -->
                         <el-dropdown-item >
@@ -34,29 +34,56 @@
         </el-menu>
 
         <!-- 修改密码弹窗 -->
+        <el-dialog title="密码修改" :visible.sync="dialogFormVisible">
 
+            <el-form class="small-space" :model="passwordForm"  :rules="passwordFormRules" ref="passwordForm" label-position="right" label-width="100px" style='width: 400px; margin-left:50px;'>
+             
+               
+
+                <el-form-item label="原密码" prop="oldPassword" >
+                  <el-input type="password" v-model="passwordForm.oldPassword" auto-complete="off"></el-input>
+                </el-form-item>
+
+                <el-form-item label="新密码" prop="newPassword">
+                  <el-input type="password" v-model="passwordForm.newPassword" auto-complete="off"></el-input>
+                </el-form-item>
+
+                <el-form-item label="重复新密码" prop="newPassword2">
+                  <el-input type="password" v-model="passwordForm.newPassword2" auto-complete="off"></el-input>
+                </el-form-item>
+
+                
+               
+            </el-form>
+
+              <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+               
+                <el-button type="primary" @click="handlePwdModifySubmit(passwordForm)">确 定</el-button>
+              </div>
+        </el-dialog>
         <!-- 换肤弹窗 -->
         <el-dialog title="更改主题颜色" :visible.sync="dialogVisible" >
-          <el-form class="small-space" label-position="left" label-width="130px" style='width: 400px; margin-left:50px;'>
-         
-            <el-form-item label="请选择主题颜色：" prop="resource">
-               <el-radio-group v-model="themeValue">
-                    <el-radio label="blue">蓝色</el-radio>
-                    <el-radio label="green">绿色</el-radio>
-                    <el-radio label="red">红色</el-radio>
-               </el-radio-group>
-             </el-form-item>
+              <el-form class="small-space" label-position="left" label-width="130px" style='width: 400px; margin-left:50px;'>
+             
+                <el-form-item label="请选择主题颜色：" prop="resource">
+                   <el-radio-group v-model="themeValue">
+                        <el-radio label="blue">蓝色</el-radio>
+                        <el-radio label="green">绿色</el-radio>
+                        <el-radio label="red">红色</el-radio>
+                   </el-radio-group>
+                 </el-form-item>
 
-            
-           
-          </el-form>
+                
+               
+              </el-form>
 
-          <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogVisible = false">取 消</el-button>
-           
-            <el-button type="primary" @click="handleChangeTheme">确 定</el-button>
-          </div>
-    </el-dialog>
+              <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">取 消</el-button>
+               
+                <el-button type="primary" @click="handleChangeTheme">确 定</el-button>
+              </div>
+        </el-dialog>    
     
     </div>
 </template>
@@ -72,6 +99,7 @@
 
     import {global} from 'src/global/global';
     import Cookies from 'js-cookie';
+    import md5 from 'blueimp-md5';
 
     export default {
       components: {
@@ -81,18 +109,53 @@
         Screenfull
       },
       data() {
+        const validateOldPassword = (rule, value, callback) => {
+            if ( md5('@lss'+value) !== md5('@lss123456') ) { 
+                  callback(new Error('旧密码不正确！'));
+            } else {
+                
+                callback();
+            }
+        };
+        const validateNewPassword2 = (rule, value, callback) => {
+                if (value !== this.passwordForm.newPassword) {
+                  callback(new Error('两次输入密码不一致!'));
+                } else {
+                  callback();
+                }
+        };
+
         return {
-          log: errLogStore.state.errLog,
-          dialogVisible:false,
-          themeValue: Cookies.get('themeValue') ? Cookies.get('themeValue') : 'blue',
+            log: errLogStore.state.errLog,
+            dialogVisible:false,
+            dialogFormVisible:false,
+            themeValue: Cookies.get('themeValue') ? Cookies.get('themeValue') : 'blue',
+            passwordForm: {
+                "oldPassword":'',
+                "newPassword":'',
+                "newPassword2":'',
+            },
+            passwordFormRules: {
+                oldPassword: [
+                    { required: true, trigger: 'blur', message: '旧密码不能为空！'},
+                    { required: true, trigger: 'blur' , validator: validateOldPassword}
+                   
+                ],
+                newPassword: [
+                    { required: true, trigger: 'blur', message: '新密码不能为空！'},
+                ],
+                newPassword2: [
+                    { required: true, trigger: 'blur', message: '重复密码不能为空！'},
+                    { required: true, trigger: 'blur' , validator: validateNewPassword2}
+                ]
+            },
         }
       },
       computed: {
         ...mapGetters([
           'sidebar',
           'userInfo',
-          'name',
-          'avatar'
+            
         ])
       },
        mounted() {
@@ -106,6 +169,24 @@
             global.changeTheme(vm.themeValue);
 
             this.dialogVisible = false;
+        },
+        handlePwdModifySubmit(formName){
+            var vm = this;
+            console.log('---',this.passwordForm)
+            vm.$refs.passwordForm.validate(valid => {
+                if (valid) {
+                    alert('恭喜:旧密码验证成功!')
+                   var par = {
+                            "oldPassword": md5('@lss123456'),
+                            "newPassword": md5('@lss' + vm.passwordForm.newPassword),
+                            "newPassword2": md5('@lss' + vm.passwordForm.newPassword2),
+                    }
+                    console.log('密码修改入参为：',par)
+                } else {
+                  console.log('error submit!!');
+                  return false;
+                }
+            });
         },
         toggleSideBar() {
            //6-28

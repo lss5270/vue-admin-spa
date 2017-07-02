@@ -1,12 +1,19 @@
 <template>
     <div>
         <!-- 注意：路由表不能配置在后端，不然前端无法配置跳转到某些路由，例如提交成功后返回至某个固定路由 lss 2017-6-27 -->
-        <!-- 菜单权限json（调试专用）：{{ routes['/index/tableList'] }}==={{ routes | json }} -->
+        <!-- 菜单权限json（调试专用）：==={{ routes | json }} -->
         <template v-if="routes">
             <!-- 一级菜单 示例-->
-            <router-link  to="/index/tableList"  v-if="routes['/index/tableList']" >
-                <el-menu-item index="/index/tableList">
-                    <i class="fa fa-file-excel-o" aria-hidden="true"></i> 示例表格
+            <router-link  to="/index/personalInfo"  v-if="routes['/index/personalInfo']" >
+                <el-menu-item index="/index/personalInfo">
+                    <i class="fa fa-home" aria-hidden="true"></i> 首页
+            
+                </el-menu-item>
+            </router-link>
+
+            <router-link  to="/example/tableList"  v-if="routes['/example/tableList']" >
+                <el-menu-item index="/example/tableList">
+                    <i class="fa fa-table" aria-hidden="true"></i> 示例表格
             
                 </el-menu-item>
             </router-link>
@@ -58,14 +65,14 @@
                            第二级菜单
                         </template>
                         
-                            <router-link  class="menu-indent" to="/example/table1" >
-                                <el-menu-item index="/example/table1">
-                                    第三级菜单1
+                            <router-link  class="menu-indent" to="/example/31" >
+                                <el-menu-item index="/example/31">
+                                    没权限重定向401
                                 </el-menu-item>
                             </router-link>
                              <router-link  class="menu-indent" to="/example/table2" >
                                 <el-menu-item index="/example/table2">
-                                    第三级菜单2
+                                    地址错误跳404
                                 </el-menu-item>
                             </router-link>
 

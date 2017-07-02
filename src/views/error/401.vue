@@ -12,7 +12,7 @@
           <li class="link-type">
             <router-link to="/">回首页</router-link>
           </li>
-          <li class="link-type"><a href="https://www.github.com/">随便看看</a></li>
+          <li class="link-type"><a href="https://github.com/lss5270/vue-admin-spa">随便看看</a></li>
          
         </ul>
       </el-col>

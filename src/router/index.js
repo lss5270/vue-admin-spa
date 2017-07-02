@@ -22,8 +22,9 @@ const Err404 = _import('error/404');
 const Err401 = _import('error/401');
 
 
+const PersonalInfo = _import('index/personalInfo');
 /* excel */
-const tableList = _import('index/tableList');
+const TableList = _import('index/tableList');
 
 
 /* example*/
@@ -52,13 +53,12 @@ export const constantRouterMap = [
   {
     path: '/',
     //component: Layout,
-    redirect: '/index/tableList',  //重定向到默认首页
+    redirect: '/index/personalInfo',  //重定向到默认首页
    
     hidden: true,
     
   },
 
-  // 以下为从异步路由粘贴过来
   {
     path: '/index',
     component: Layout,
@@ -66,7 +66,17 @@ export const constantRouterMap = [
     name: '',
     // icon: 'EXCEL',
     noDropdown: true,
-    children: [{ path: 'tableList', component: tableList, name: '示例表格' }]
+    children: [{ path: 'personalInfo', component: PersonalInfo, name: '个人信息' }]
+  },
+
+  {
+    path: '/example',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '',
+    // icon: 'EXCEL',
+    noDropdown: true,
+    children: [{ path: 'tableList', component: TableList, name: '示例表格' }]
   },
   {
     path: '/errorpage',
@@ -88,8 +98,10 @@ export const constantRouterMap = [
     children: [
       
       { path: 'form', component: Form, name: 'form表单编辑' },
+
       { path: 'tinymce', component: Tinymce, name: '富文本编辑器' },
-      { path: 'mixin', component: Mixin, name: '小组件' }
+      { path: 'mixin', component: Mixin, name: '小组件' },
+      { path: '31', component: Form, name: '三级菜单1' },
     ]
   },
   // { path: '/', redirect: '/excel', hidden: true },
