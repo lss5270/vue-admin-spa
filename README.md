@@ -42,7 +42,7 @@
    
     # 安装依赖
     npm install
-    #or 直接解压node_modules（比较适合新手）
+    #or 直接解压node_modules（比较适合新手）。由于github不能上传大于25M的文件，请点击这里下载：[下载node_modules](http://pan.baidu.com/s/1eSL4I8y)
 
     # 本地开发 开启服务
     npm run dev
