@@ -1,5 +1,7 @@
-# 后台管理系统 vue-admin-spa #
+# 后台管理系统 vue-admin-spa # https://lss5270.github.io/vue-admin-spa-demo/
 使用到的技术：vue + vue-resouce + vue-router + vuex(大型spa必备) + element-ui + webpack + npm 
+
+[测试地址](https://lss5270.github.io/vue-admin-spa-demo)
 
 ## 前言
 本项目基于vue脚手架和三个项目（取长补短）改建而成，并且不断完善，目的是为了更接近和适合大家的项目需求，以下几点重写过：
