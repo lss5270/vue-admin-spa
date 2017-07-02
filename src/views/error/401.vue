@@ -17,7 +17,7 @@
         </ul>
       </el-col>
       <el-col :span="12">
-        <img :src="errGif" width="313" height="428" alt="Girl has dropped her ice cream.">
+        <img :src="errGif"  alt="401 image">
       </el-col>
     </el-row>
 
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import errGif from 'assets/401.gif';
+    import errGif from 'assets/401.png';
     export default {
       data() {
         return {
