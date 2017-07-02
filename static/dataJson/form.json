@@ -1,0 +1,15 @@
+{
+  "resultCode": "0",
+  "resultMsg": "表单接口出错信息1",
+  "data":{  
+  		"name": "",
+  		"region": "",
+  		"date1": "",
+  		"date2": "",
+  		"delivery": false,
+  		"type": [],
+  		"resource": "",
+  		"desc": ""
+  }
+}
+

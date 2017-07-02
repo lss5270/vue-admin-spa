@@ -1,0 +1,77 @@
+{
+  "resultCode": "0",
+  "resultMsg": "",
+  "data": {
+    "currPage": 2,
+    "total": 88,
+    
+    "pageSize": 10,
+    "data": [
+      {
+        "chnlId": "10004",
+        "hisChnlId": "2",
+        "chnlName": "YYALIPAY",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10007",
+        "hisChnlId": "10",
+        "chnlName": "JKSZ",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10009",
+        "hisChnlId": "12",
+        "chnlName": "JY160",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10008",
+        "hisChnlId": "13",
+        "chnlName": "PAJK",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10002",
+        "hisChnlId": "4",
+        "chnlName": "YXWWECHAT",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10003",
+        "hisChnlId": "8",
+        "chnlName": "YXWALIPAY",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10005",
+        "hisChnlId": "3",
+        "chnlName": "JKYWECHAT",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      },
+      {
+        "chnlId": "10006",
+        "hisChnlId": "7",
+        "chnlName": "JKYALIPAY",
+        "state": "ZC",
+        "isavailable": "Y",
+        "orderNum": 10
+      }
+      
+    ]
+  }
+}
