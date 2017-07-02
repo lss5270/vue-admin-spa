@@ -78,12 +78,14 @@
 ```
 
 ## 关于图标
-```本项目使用了两套图标系统，具体使用方法参照以下官方链接
+```
+    本项目使用了两套图标系统，具体使用方法参照以下官方链接:
     1.http://element.eleme.io/#/zh-CN/component/icon
     2.http://fontawesome.io/icons/
 ```
 ## 关于UI系统
-```由于bootstrap不支持mvvm已弃用，本项目使用了全新的elementUI系统，具体使用方法参照以下官方链接
+```
+    由于bootstrap不支持mvvm已弃用，本项目使用了全新的elementUI系统，具体使用方法参照以下官方链接:
     1.http://element.eleme.io/#/zh-CN/component/installation
     
 ```
