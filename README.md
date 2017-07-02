@@ -57,9 +57,7 @@
 
 ## 发布
 ```bash
-    <!-- # 发布测试环境 带webpack ananalyzer
-    npm run build:sit-preview -->
-
+  
     # 构建生产环境
     npm run build:prod
     #or 直接双击build.bat（比较适合新手）
