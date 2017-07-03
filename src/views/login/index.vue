@@ -72,7 +72,7 @@
         return {
             loginForm: {
                 email: '81438234@qq.com',
-                password: '123456'
+                password: ''
             },
             loginRules: {
                 email: [

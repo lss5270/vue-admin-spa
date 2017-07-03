@@ -1,12 +1,11 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
 import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';
-import 'assets/custom-theme/index.css'; // 换肤版本element-ui css 
+
 import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css';// Progress 进度条 样式
 import 'normalize.css/normalize.css';// normalize.css 样式格式化
@@ -75,12 +74,12 @@ router.beforeEach((to, from, next) => {
                 }else{
                     if(store.getters.permission_routers[to.path] == undefined){
                        
-                        next({ path: '/404' }); //死循环已解决
+                        next({ path: '/404' }); //
                         NProgress.done();
                         
                     }else if(store.getters.permission_routers[to.path] == false){
                        
-                        next({ path: '/401' }); //死循环已解决
+                        next({ path: '/401' }); //
                         NProgress.done();
                         
                     }
@@ -107,6 +106,7 @@ router.beforeEach((to, from, next) => {
         }
         
     }
+    NProgress.done();
     
 });
 
