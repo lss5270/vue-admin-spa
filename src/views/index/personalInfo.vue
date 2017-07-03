@@ -16,7 +16,7 @@
 
             <el-col :span="16">
                 <div class="user_info">
-                    <h2>个人信息 <a class="i_edit" v-if="!editable" @click="editable = true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</a></h2>
+                    <h2>个人信息 <el-button size="small" v-if="!editable" @click="editable = true" style="float:right;" icon="edit">编辑</el-button> </h2>
                     <div class="user_info_form" v-if="editable">
                       
                         <el-form label-position="right" label-width="100px" :model="personalInfo">

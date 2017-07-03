@@ -45,13 +45,14 @@
    
     # 安装依赖
     npm install
-    #or 直接解压node_modules（比较适合新手）。由于github不能上传大于25M的文件，请点击下面的链接进行下载
+    #or 直接解压node_modules.7z到当前位置 （比较适合新手）。
 
     # 本地开发 开启服务
     npm run dev
     #or 直接双击start.bat（比较适合新手）
 ```
-[下载node_modules](http://pan.baidu.com/s/1eSL4I8y)
+```[下载node_modules](http://pan.baidu.com/s/1eSL4I8y)
+```
 
 浏览器访问 http://localhost:2017
 

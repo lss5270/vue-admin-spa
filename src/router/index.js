@@ -24,7 +24,7 @@ const Err401 = _import('error/401');
 
 const PersonalInfo = _import('index/personalInfo');
 /* excel */
-const TableList = _import('index/tableList');
+const TableList = _import('example/tableList');
 
 
 /* example*/
