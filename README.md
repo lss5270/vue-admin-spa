@@ -1,4 +1,4 @@
-# 后台管理系统 vue-admin-spa #
+# 后台管理系统 vue-admin-spa 1.0 #
 使用到的技术：vue + vue-resource + vue-router + vuex(大型spa必备) + element-ui + webpack + npm 
 
 [测试地址](https://lss5270.github.io/vue-admin-spa-demo)
