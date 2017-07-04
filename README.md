@@ -97,10 +97,9 @@
 ├── build                      // 构建相关  
 ├── config                     // 配置相关
 ├── src                        // 源代码
-│   ├── api                    // 所有请求
 │   ├── assets                 // 主题 字体等静态资源
 │   ├── components             // 全局公用组件。不直接显示
-│   ├── directive              // 全局指令
+│   ├── global                 // 全局指令
 │   ├── filtres                // 全局filter
 │   ├── router                 // 路由
 │   ├── store                  // 全局store管理
