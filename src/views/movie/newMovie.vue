@@ -27,13 +27,13 @@
          <el-table-column type="selection" width="65">
          </el-table-column>
 
-          <el-table-column align="center" label='序号' width="100">
+          <el-table-column align="center" label='序号' width="100" >
             <template scope="scope">
               {{ scope.$index+1 }}
             </template>
           </el-table-column>
 
-            <el-table-column label="海报" width="" >
+            <el-table-column label="海报" width="">
             <template scope="scope">
                 <a :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
                     <img :src="scope.row.images.small" alt="" style="vertical-align: middle;">
@@ -42,14 +42,14 @@
             </template>
           </el-table-column>
 
-          <el-table-column label="名称" width="">
+          <el-table-column label="名称" width="" prop="title" sortable>
             <template scope="scope">
                
               {{ scope.row.title }}
             </template>
           </el-table-column>
 
-            <el-table-column label="导演" width="">
+            <el-table-column label="导演" width="" prop="directors[0].alt" sortable>
             <template scope="scope">
               <a :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
             </template>
@@ -71,20 +71,20 @@
             </template>
           </el-table-column>
 
-          <el-table-column label="综合评分"  align="center" width="">
+          <el-table-column label="综合评分"  align="center" width=""  prop="rating.average" sortable >
             <template scope="scope">
               {{scope.row.rating.average}}
             </template>
           </el-table-column>
 
-          <el-table-column align="center" prop="created_at" label="收藏量" width="">
+          <el-table-column align="center" prop="created_at" label="收藏量" width=""   >
             <template scope="scope">
               
               <span>{{scope.row.collect_count}}</span>
             </template>
           </el-table-column>
 
-            <el-table-column align="center"  label="上映年份" >
+            <el-table-column align="center"  label="上映年份" prop="year" sortable >
                 <template scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span>{{scope.row.year}}</span>
