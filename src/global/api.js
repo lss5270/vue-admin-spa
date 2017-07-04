@@ -19,9 +19,12 @@ export const api = {
 
             //'login':'http://localhost:80/dataJson/login.json',//ngxin
             'login':url.staticPath+'/dataJson/login.json',//登录模拟接口，正式环境请删除
-            'getUserInfo':url.staticPath+'/dataJson/userInfo.json',//登录模拟接口，正式环境请删除
-            'tableList':url.staticPath+'/dataJson/tableList.json',//表格模拟接口，正式环境请删除
-            'getForm':url.staticPath+'/dataJson/form.json',//表单模拟接口，正式环境请删除
+            'getUserInfo':url.staticPath+'/dataJson/userInfo.json',//获取登录用户模拟接口
+            'tableList':url.staticPath+'/dataJson/tableList.json',//表格模拟接口
+            'getForm':url.staticPath+'/dataJson/form.json',//表单模拟接口
+            "in_theaters":url.staticPath+"/dataJson/in_theaters.json",  //获取电影列表
+
+            //"in_theaters":"/v2/movie/in_theaters",  //获取电影列表
 
             '0':url.apiUrl+'',//获取科室接口
             '1':url.apiUrl+'',

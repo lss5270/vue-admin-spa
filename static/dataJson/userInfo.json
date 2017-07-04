@@ -16,6 +16,7 @@
             "permissions":{
                 "/index/personalInfo":true,
             	"/example/tableList":true,
+                "/movie/newMovie":true,
         		"/errorpage/401":false,
         		"/errorpage/404":false,
                 "/example/form":true,

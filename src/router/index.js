@@ -25,7 +25,7 @@ const Err401 = _import('error/401');
 const PersonalInfo = _import('index/personalInfo');
 /* excel */
 const TableList = _import('example/tableList');
-
+const NewMovie = _import('movie/newMovie');
 
 /* example*/
 const Form = _import('example/form');
@@ -78,6 +78,17 @@ export const constantRouterMap = [
     noDropdown: true,
     children: [{ path: 'tableList', component: TableList, name: '示例表格' }]
   },
+
+  {
+    path: '/movie',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '',
+    // icon: 'EXCEL',
+    noDropdown: true,
+    children: [{ path: 'newMovie', component: NewMovie, name: '热映电影列表' }]
+  },
+
   {
     path: '/errorpage',
     component: Layout,

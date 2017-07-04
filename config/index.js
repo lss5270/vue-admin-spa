@@ -31,10 +31,10 @@ module.exports = {
         assetsPublicPath: '/',
         staticPath:'/static/',
         proxyTable: {
-            '/urm-mt-interface': {
-                target: 'http://192.168.40.20:8080/',
+            '/v2': {
+                target: 'http://api.douban.com',
                 pathRewrite: {
-                  '^/urm-mt-interface': '/urm-mt-interface'
+                  '^/v2': '/v2'
                 }
             }
         },
