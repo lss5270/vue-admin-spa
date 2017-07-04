@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "a vue management system based on ：vue + vue-resource + vue-router + vuex + element-ui + webpack + npm",
   "keywords": [
+    "vue",
+    "vue-admin",
     "vue-admin-spa",
     "vue-admin-system",
     "admin-system",
-    "vue",
     "vue-resouce",
     "vue-router",
     "vuex",
