@@ -6,13 +6,13 @@
         <h1 class="text-jumbo text-ginormous">401!</h1>
        
         <h2>你没有权限去该页面</h2>
-        <h6>如有不满请联系你领导</h6>
+        <h6>你可以联系你领导，或者你可以去:</h6>
         <ul class="list-unstyled">
-          <li>或者你可以去:</li>
+          
           <li class="link-type">
             <router-link to="/">回首页</router-link>
           </li>
-          <li class="link-type"><a href="https://github.com/lss5270/vue-admin-spa">随便看看</a></li>
+          <li class="link-type"><a href="https://github.com/lss5270/vue-admin-spa">源码主页</a></li>
          
         </ul>
       </el-col>
@@ -52,8 +52,8 @@
     width: 800px;
     margin: 100px auto;
     .pan-back-btn {
-      background: #008489;
-      color: #fff;
+      /*background: #008489;
+      color: #fff;*/
     }
     .pan-gif {
       margin: 0 auto;

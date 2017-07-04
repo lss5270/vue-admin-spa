@@ -2,20 +2,20 @@
   <div style="background:#f0f2f5;margin-top: -20px;">
     <div class="wscn-http404">
       <div class="pic-404"> 
-         <!-- <img class="pic-404__parent" src="../../assets/404-error.png" alt="404"> -->
-        <img class="pic-404__parent" src="../../assets/404.png" alt="404">
+         <img class="pic-404__parent" src="../../assets/404-error.png" alt="404">
+        <!-- <img class="pic-404__parent" src="../../assets/404.png" alt="404">
         <img class="pic-404__child left" src="../../assets/404_cloud.png" alt="404">
         <img class="pic-404__child mid" src="../../assets/404_cloud.png" alt="404">
-        <img class="pic-404__child right" src="../../assets/404_cloud.png" alt="404">
+        <img class="pic-404__child right" src="../../assets/404_cloud.png" alt="404"> -->
       </div>
       <div class="bullshit">
         <div class="bullshit__oops">404!</div>
         
         <div class="bullshit__headline">{{ message }}</div>
-        <div class="bullshit__info">请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告</div>
-        <p class=""><a href="/" class="bullshit__return-home" style="">返回首页</a></p>
+        <div class="bullshit__info">请检查您输入的网址是否正确，可点击以下按钮返回主页或者去往源码主页</div>
+        <p class=""><a href="/"><el-button >返回首页</el-button></a></p>
 
-        <a href="https://github.com/lss5270/vue-admin-spa" class="bullshit__return-home">随便看看</a>
+        <a href="https://github.com/lss5270/vue-admin-spa"><el-button >源码主页</el-button></a>
       </div>
     </div>
   </div>
