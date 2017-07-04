@@ -29,14 +29,14 @@
 </template>
 
 <script>
-    import { isWscnEmail } from 'utils/validate';
+    import { isEmail } from 'utils/validate';
     // import { sendPWD2Email } from 'api/login';
 
     export default {
       name: 'reset',
       data() {
         const validateEmail = (rule, value, callback) => {
-          if (!isWscnEmail(value)) {
+          if (!isEmail(value)) {
             callback(new Error('请输入正确的邮箱'));
           } else {
             callback();

@@ -38,14 +38,14 @@
 </template>
 
 <script>
-    import { isWscnEmail } from 'utils/validate';
+    import { isEmail } from 'utils/validate';
     // import { restPWD } from 'api/login';
 
     export default {
       name: 'reset',
       data() {
         const validateEmail = (rule, value, callback) => {
-          if (!isWscnEmail(value)) {
+          if (!isEmail(value)) {
             callback(new Error('邮箱错误'));
           } else {
             callback();
@@ -127,7 +127,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-    @import "src/styles/mixin.scss";
+    @import "src/assets/css/mixin.scss";
 
     .reset-container {
         input:-webkit-autofill {

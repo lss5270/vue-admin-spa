@@ -31,7 +31,7 @@
 
 <script>
     import { mapGetters } from 'vuex';
-    import { isWscnEmail } from 'utils/validate';
+    import { isEmail } from 'utils/validate';
     import md5 from 'blueimp-md5';
     // import { getQueryObject } from 'utils';
    
@@ -41,7 +41,7 @@
       name: 'login',
       data() {
         const validateEmail = (rule, value, callback) => {
-          if (!isWscnEmail(value)) {
+          if (!isEmail(value)) {
             callback(new Error('请输入正确的合法邮箱'));
           } else {
             callback();
@@ -149,7 +149,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-    @import "src/styles/mixin.scss";
+    @import "src/assets/css/mixin.scss";
     .tips{
       font-size: 14px;
       color: #fff;

@@ -24,16 +24,16 @@
    
     <!-- 表格 -->
     <el-table ref="multipleTable" @selection-change="handleSelectionChange" :data="list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row  >
-         <el-table-column type="selection" width="65">
+         <el-table-column type="selection" width="50">
          </el-table-column>
 
-          <el-table-column align="center" label='序号' width="100" >
+          <el-table-column align="center" label='序号' width="70" >
             <template scope="scope">
               {{ scope.$index+1 }}
             </template>
           </el-table-column>
 
-            <el-table-column label="海报" width="">
+            <el-table-column label="海报" width="" align="center">
             <template scope="scope">
                 <a :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
                     <img :src="scope.row.images.small" alt="" style="vertical-align: middle;">
@@ -196,8 +196,20 @@ export default {
     getList() {
         var vm = this;
 
-          vm.listLoading = true;
-          
+        vm.listLoading = true;
+
+        // vm.$http.get(api.in_theaters, {params: {'q':"11"},timeout:8000 }).then((response) => {
+        //     // 响应成功回调
+        //     var data = res.body;
+
+        //         console.log(data)
+        // }, (response) => {
+        //     // 响应错误回调
+        //     console.log('失败回调')
+           
+        // })
+        // return false;
+
         global.get( api.in_theaters,{params: {'q':""},timeout:8000 },function(res){
                 //console.log('-------获取到数据：',JSON.stringify(res) )
                 var data = res.body;
@@ -231,44 +243,7 @@ export default {
             vm.listLoading = false;
         },false)
 
-        //请求开发环境接口
-        // var url = '/urm-mt-interface/service/hisForHzfwhService/';
-        // var par = {
-        //           "isavailable": "Y",
-        //           "beginDate": "20170616",
-        //           "endDate": "20170616",
-        //           "channelItems": [
-        //             {
-        //               "chnlId": 1
-        //             }
-        //           ],
-        //           "hospitalId": "1",
-        //           "methodCode": "getDeptRegInfo001",
-        //           "nonceStr": "2A4B9B991078AC805C1D31CD366FC394",
-        //           "openId": "JY160",
-        //           "channel": "JY160",
-        //           "key": "6BB30AAE2804144011040E664D87AC5452246969",
-        //           "signature": "071C301677F98547DD3CA77D48E93EA1BE61872D",
-        //           "resultType": "json"
-        //     };
-
-        // global.get( url,{params: par },function(res){
-        //         console.log('-------开发环境获取到数据：',JSON.stringify(res) )
-        //         var data = res.body;
-        //        if(data.resultCode == 0){ 
-                    
-                   
-                    
-        //        }else{
-                    
-                   
-        //        }
-               
-                
-        // },function(res){
-            
-           
-        // },false)
+        
 
     },
     //编辑

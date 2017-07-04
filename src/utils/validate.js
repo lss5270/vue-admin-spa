@@ -3,7 +3,7 @@
  */
 
 /* 是否邮箱*/
-export function isWscnEmail(str) {
+export function isEmail(str) {
   const reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
   return reg.test(str.trim());
 }

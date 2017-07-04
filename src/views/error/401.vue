@@ -26,12 +26,12 @@
 </template>
 
 <script>
-    import errGif from 'assets/401.png';
+    import errGif from 'assets/img/401.png';
     export default {
       data() {
         return {
           errGif: errGif + '?' + +new Date(),
-          ewizardClap: 'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646',
+         
          
         }
       },
