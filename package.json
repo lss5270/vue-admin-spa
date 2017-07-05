@@ -1,7 +1,7 @@
 {
   "name": "vue-admin-spa",
   "version": "1.0.0",
-  "description": "a vue management system based on ：vue + vue-resource + vue-router + vuex + element-ui + webpack + npm",
+  "description": "a vue management system based on ：vue + vue-resource + vue-router + vuex + element-ui + ES6 + webpack + npm",
   "keywords": [
     "vue",
     "vue-admin",
