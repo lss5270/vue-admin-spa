@@ -104,7 +104,6 @@
 │   ├── filtres                // 全局filter
 │   ├── router                 // 路由
 │   ├── store                  // 全局store管理
-│   ├── styles                 // 全局样式
 │   ├── utils                  // 全局公用方法
 │   ├── view                   // view视图层
 │   ├── App.vue                // 入口页面
