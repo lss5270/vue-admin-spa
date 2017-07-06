@@ -33,7 +33,8 @@ export  const global = {
                 
                 loadCss(itemPath)
             };
-            Cookies.set('themeValue', themeValue);
+            
+            localStorage.setItem("themeValue",themeValue)
 
             function loadCss(path){
                 var head = document.getElementsByTagName('head')[0];

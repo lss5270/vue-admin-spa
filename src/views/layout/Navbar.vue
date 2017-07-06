@@ -129,7 +129,7 @@
             log: errLogStore.state.errLog,
             dialogVisible:false,
             dialogFormVisible:false,
-            themeValue: Cookies.get('themeValue') ? Cookies.get('themeValue') : 'blue',
+            themeValue: localStorage.getItem("themeValue") ? localStorage.getItem("themeValue") : 'blue',
             passwordForm: {
                 "oldPassword":'',
                 "newPassword":'',

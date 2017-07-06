@@ -9,7 +9,7 @@ import { Message } from 'element-ui';
 const user = {
   state: {
     uid: Cookies.get('userId'),
-    token: Cookies.get('Admin-Token'),
+    token: Cookies.get('userToken'),
     userInfo:null,
 
   },
@@ -49,7 +49,7 @@ const user = {
                if(res.body.resultCode == 0){
                     var res = res.body.data;
 
-                      Cookies.set('Admin-Token', res.token); //设置token
+                      Cookies.set('userToken', res.token); //设置token
                       Cookies.set('userId', res.uid); //设置用户id，用以获取用户信息
 
                       commit('SET_TOKEN', res.token);
@@ -84,7 +84,7 @@ const user = {
                   if(res.body.resultCode == 0){
                        var res = res.body.data;
                              
-                             Cookies.set('Admin-Token', res.token); //Cookies.get('userId')
+                             Cookies.set('userToken', res.token); //Cookies.get('userId')
                              Cookies.set('userId', res.uid); //Cookies.get('userId')
 
                              commit('SET_TOKEN', res.token);
@@ -121,7 +121,7 @@ const user = {
         commit('SET_CODE', code);
         loginByThirdparty(state.status, state.email, state.code, state.auth_type).then(response => {
           commit('SET_TOKEN', response.data.token);
-          Cookies.set('Admin-Token', response.data.token);
+          Cookies.set('userToken', response.data.token);
           resolve();
         }).catch(error => {
           reject(error);
@@ -138,7 +138,7 @@ const user = {
         // logout(state.token).then(() => {  
           commit('SET_TOKEN', '');
           // commit('SET_ROLES', []);
-          Cookies.remove('Admin-Token');
+          Cookies.remove('userToken');
           Cookies.remove('userId');
           resolve();
         // }).catch(error => {
@@ -151,7 +151,7 @@ const user = {
     FedLogOut({ commit }) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '');
-        Cookies.remove('Admin-Token');
+        Cookies.remove('userToken');
         Cookies.remove('userId');
         resolve();
       });
