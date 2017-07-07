@@ -36,7 +36,7 @@ Object.keys(filters).forEach(key => {
 });
 
 //加载用户主题
-if( Cookies.get('themeValue') ){
+if( localStorage.getItem('themeValue') ){
     global.changeTheme( localStorage.getItem("themeValue"));
 }
 
