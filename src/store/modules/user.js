@@ -49,8 +49,9 @@ const user = {
                if(res.body.resultCode == 0){
                     var res = res.body.data;
 
-                      Cookies.set('userToken', res.token); //设置token
-                      Cookies.set('userId', res.uid); //设置用户id，用以获取用户信息
+                    // 按一天8小时工作制设置过期时间
+                      Cookies.set('userToken', res.token,{ expires: 1/3, path: '' }); //设置token
+                      Cookies.set('userId', res.uid,{ expires: 1/3, path: '' }); //设置用户id，
 
                       commit('SET_TOKEN', res.token);
                       //设置userInfo
@@ -84,8 +85,8 @@ const user = {
                   if(res.body.resultCode == 0){
                        var res = res.body.data;
                              
-                             Cookies.set('userToken', res.token); //Cookies.get('userId')
-                             Cookies.set('userId', res.uid); //Cookies.get('userId')
+                             // Cookies.set('userToken', res.token); //Cookies.get('userId')
+                             // Cookies.set('userId', res.uid); //Cookies.get('userId')
 
                              commit('SET_TOKEN', res.token);
                              //设置userInfo
