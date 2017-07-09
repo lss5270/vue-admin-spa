@@ -50,8 +50,8 @@ const user = {
                     var res = res.body.data;
 
                     // 按一天8小时工作制设置过期时间
-                      Cookies.set('userToken', res.token,{ expires: 1/3, path: '' }); //设置token
-                      Cookies.set('userId', res.uid,{ expires: 1/3, path: '' }); //设置用户id，
+                      Cookies.set('userToken', res.token,{ expires: 1/3}); //设置token
+                      Cookies.set('userId', res.uid,{ expires: 1/3}); //设置用户id，
 
                       commit('SET_TOKEN', res.token);
                       //设置userInfo
@@ -148,15 +148,6 @@ const user = {
       });
     },
 
-    // 前端 登出
-    FedLogOut({ commit }) {
-      return new Promise(resolve => {
-        commit('SET_TOKEN', '');
-        Cookies.remove('userToken');
-        Cookies.remove('userId');
-        resolve();
-      });
-    },
 
     // 动态修改权限
     ChangeRole({ commit }, role) {
