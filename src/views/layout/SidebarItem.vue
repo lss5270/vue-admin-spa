@@ -4,6 +4,13 @@
         <!-- 菜单权限json（调试专用）：==={{ routes | json }} -->
         <template v-if="routes">
             <!-- 一级菜单 示例-->
+            <router-link  to="/index/readme"  v-if="routes['/index/readme']" >
+                <el-menu-item index="/index/readme">
+                    <i class="el-icon-star-on" aria-hidden="true"></i> 系统说明
+            
+                </el-menu-item>
+            </router-link>
+
             <router-link  to="/index/personalInfo"  v-if="routes['/index/personalInfo']" >
                 <el-menu-item index="/index/personalInfo">
                     <i class="fa fa-home" aria-hidden="true"></i> 首页
@@ -44,7 +51,7 @@
                
             </el-submenu>
             
-             <!-- 三级菜单 示例-->
+            <!-- 三级菜单 示例-->
             <el-submenu index="综合实例" v-if="routes['/example/form'] || routes['/example/tinymce'] || routes['/example/mixin'] ">
                 <template slot="title">
                     <i class="fa fa-envelope-open-o" aria-hidden="true"></i> 综合实例
@@ -87,6 +94,24 @@
                        
                     </el-submenu>
 
+            </el-submenu>
+
+            <el-submenu index="系统设置" v-if="routes['/systemSet/permissionsManage'] || routes['/systemSet/loginLog']"> 
+                <template slot="title">
+                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> 系统设置
+                </template>
+              
+                    <router-link  class="menu-indent" to="/systemSet/permissionsManage" v-if="routes['/systemSet/permissionsManage']">
+                        <el-menu-item index="/systemSet/permissionsManage">
+                            权限管理
+                        </el-menu-item>
+                    </router-link>
+                    <router-link  class="menu-indent" to="/systemSet/loginLog" v-if="routes['/systemSet/loginLog']">
+                        <el-menu-item index="/systemSet/loginLog">
+                            登录日志
+                        </el-menu-item>
+                    </router-link>
+               
             </el-submenu>
 
         </template>    

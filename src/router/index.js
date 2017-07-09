@@ -23,14 +23,19 @@ const Err401 = _import('error/401');
 
 
 const PersonalInfo = _import('index/personalInfo');
-/* excel */
+const Readme = _import('index/readme');
+/* example*/
 const TableList = _import('example/tableList');
 const NewMovie = _import('movie/newMovie');
 
-/* example*/
+
 const Form = _import('example/form');
 const Tinymce = _import('example/tinymce');
 const Mixin = _import('example/mixin');
+
+/* 系统管理*/
+const PermissionsManage = _import('systemSet/permissionsManage');
+
 
 Vue.use(Router);
 
@@ -53,12 +58,20 @@ export const constantRouterMap = [
   {
     path: '/',
     //component: Layout,
-    redirect: '/index/personalInfo',  //重定向到默认首页
+    redirect: '/index/readme',  //重定向到默认首页
    
     hidden: true,
     
   },
-
+  {
+    path: '/index',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '',
+    // icon: 'EXCEL',
+    noDropdown: true,
+    children: [{ path: 'readme', component: Readme, name: '系统说明' }]
+  },
   {
     path: '/index',
     component: Layout,
@@ -98,6 +111,17 @@ export const constantRouterMap = [
     children: [
       { path: '401', component: Err401, name: '401' },
       { path: '404', component: Err404, name: '404' }
+    ]
+  },
+  {
+    path: '/systemSet',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '系统设置',
+    // icon: '404',
+    children: [
+      { path: 'permissionsManage', component: PermissionsManage, name: '权限管理' },
+      
     ]
   },
   {

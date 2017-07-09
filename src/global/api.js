@@ -23,8 +23,10 @@ export const api = {
             'tableList':url.staticPath+'/dataJson/tableList.json',//表格模拟接口
             'getForm':url.staticPath+'/dataJson/form.json',//表单模拟接口
             "in_theaters":url.staticPath+"/dataJson/in_theaters.json",  //获取电影列表
-
             //"in_theaters":"/v2/movie/in_theaters",  //获取电影列表
+            "roleAndUser":url.staticPath+"/dataJson/roleAndUser.json",  //获取角色和对应用户  
+            "getMenuAndElement":url.staticPath+"/dataJson/getMenuAndElement.json",  //获取用户的 菜单和元素权限 
+            
 
             '0':url.apiUrl+'',//获取科室接口
             '1':url.apiUrl+'',

@@ -1,0 +1,111 @@
+{
+    "resultCode": "0",
+    "resultMsg": "",
+    "data": {
+        "smMenuBeanDtoList": [
+            {
+            "id": "1",
+            "menuName": "系统说明",
+            "url": "/index/readme",
+            "icon": "fa-calendar",
+            "remark": null,
+            "seqno": 10,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+
+          {
+            "id": "10000",
+            "menuName": "首页",
+            "url": "/index/personalInfo",
+            "icon": "fa-calendar",
+            "remark": null,
+            "seqno": 10,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10001",
+            "menuName": "示例表格",
+            "url": "/example/tableList",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10002",
+            "menuName": "热映电影",
+            "url": "/movie/newMovie",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10003",
+            "menuName": "form表单编辑",
+            "url": "/example/form",
+            "icon": "fa-calendar",
+            "remark": null,
+            "seqno": 10,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10004",
+            "menuName": "富文本编辑器",
+            "url": "/example/tinymce",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10005",
+            "menuName": "权限管理",
+            "url": "/systemSet/permissionsManage",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
+            "id": "10006",
+            "menuName": "登录日志",
+            "url": "/systemSet/loginLog",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          }
+          
+        ],
+        "smElementBeanDtoList": [
+          {
+            "id": "1",
+            "elementCode": "111",
+            "elementName": "元素",
+            "menuId": "1",
+            "pageId": "1",
+            "remark": null,
+            "seqno": 1,
+            "type": 252691,
+            "set": false
+          }
+        ]
+    }
+}

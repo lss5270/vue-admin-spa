@@ -1,18 +1,6 @@
 <template>
   <div class="components-container">
-    <!-- <div class='component-item'>
-      <MDinput name="name" v-model="title" required :maxlength="100">
-        标题
-      </MDinput>
-      <code class='code-part'>Material Design 的input</code>
-    </div> -->
-
-    <!-- <div class='component-item'>
-      <PanThumb image='https://wpimg.wallstcn.com/577965b9-bb9e-4e02-9f0c-095b41417191'>
-        
-      </PanThumb>
-      <code class='code-part'>图片hover效果</code>
-    </div> -->
+    
 
     <div class='component-item'>
       <el-button v-waves type="primary">水波纹效果</el-button>
@@ -22,17 +10,16 @@
   </div>
 </template>
 <script>
-    // import MDinput from 'components/MDinput';
-    // import PanThumb from 'components/PanThumb';
+    
 
-    // export default {
-    //   components: { MDinput, PanThumb },
-    //   data() {
-    //     return {
-    //       title: ''
-    //     }
-    //   }
-    // };
+    export default {
+      components: {},
+      data() {
+        return {
+          
+        }
+      }
+    };
 </script>
 
 <style scoped>
