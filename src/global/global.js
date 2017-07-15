@@ -69,7 +69,7 @@ export  const global = {
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            let isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){
@@ -108,7 +108,7 @@ export  const global = {
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            let isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){
@@ -182,78 +182,7 @@ export  const global = {
             str = yy + "-" + MM + "-" + dd;
             return (str);
         },
-		/**
-         * 格式化数字，限制数字位数，转出格式为：99+
-         * 一般用于点赞量、评论量等
-         * @param numObj 必填，需要转格式的数字
-         * @param numlong 限制数字位数（numlong=2,如果numObj>99则返回99+），不填时不截取
-         */
-        formatNumAdd: function(numObj, numlong){
-            if(null == numObj){
-                return '';
-            }
-            if(!numlong || numObj == 0){
-                return numObj;
-            }
-            //算出最大范围
-            var maxNum = 1;
-            for(var j = 0; j< numlong; j++){
-                maxNum *= 10;
-            }
-            //未超出范围
-            if(numObj < maxNum){
-                return numObj;
-            }
-            //超出范围
-            var newNum = '';
-            for(var i = 0; i< numlong; i++){
-                newNum += '9';
-            }
-            newNum += '+';
-            return newNum;
-        },
-
-        /**
-         * 格式化数字，将数字改为带单位的格式，（如以千为单位，超过千的用单位显示，如1800-》1.8千，）
-         * @param numObj 必填，需要转格式的数字
-         * @param chiIndex 必填，单位的index，对应方法里面danwei数字的index，默认为不带单位
-         * @param poinglong 非必填，保存的小数位数，默认为1。(如果是类似1.800这样的数字，即使保存3位小数也是返回1.8)
-         */
-        formatNumChin:function(numObj, chiIndex, pointlong){
-            if(!numObj){
-                return '';
-            }
-            //不设置单位
-            if(null == chiIndex || chiIndex == ''){
-                return numObj;
-            }
-            //默认保存1位小数
-            if(null == pointlong){
-                pointlong = 1;
-            }
-
-            //单位和对应的数字，如果需要更多单位，补在danwei和maxNumArr数组后面
-            var danwei = ["","百","千","万","亿"];
-            var maxNumArr = [1,100,1000,10000,100000000];//单位对应的数字，与danwei数组一一对应
-
-            if(numObj < maxNumArr[chiIndex]){
-                return numObj;
-            }
-
-            numObj = parseFloat(numObj);
-            var numDataStr = parseFloat(numObj/maxNumArr[chiIndex])+'';//浮点型字符串
-            //截取小数位数
-            var pointIndex = numDataStr.indexOf(".");
-            if(pointlong == 0){
-                numDataStr = numDataStr.substring(0,pointIndex);
-            }else if(pointIndex != -1){
-                numDataStr = numDataStr.substring(0,pointIndex+pointlong+1);
-            }
-
-            numDataStr = numDataStr+danwei[chiIndex];//添加中文单位
-            return numDataStr;
-        },
-        
+		
         
         /**
          * 移动端弹窗，样式文件已写在配置依赖里
