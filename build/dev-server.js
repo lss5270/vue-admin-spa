@@ -1,8 +1,8 @@
 // require('./check-versions')(); // 检查 Node 和 npm 版本
-// let config = require('../config');
-// if (!process.env.NODE_ENV) {
-//     process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
-// }
+let config = require('../config');
+if (!process.env.NODE_ENV) {
+    process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+}
 
 const opn = require('opn')
 const path = require('path');

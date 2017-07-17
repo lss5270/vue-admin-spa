@@ -69,7 +69,7 @@ export  const global = {
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            let isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){
@@ -108,7 +108,7 @@ export  const global = {
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            let isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){
