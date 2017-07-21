@@ -130,7 +130,11 @@
 后台只有user和app配置相关状态使用vuex存在全局，其它数据都由每个业务页面自己管理。
 
 
+## License（执照）
 
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017-present, LSS
 
 
 
