@@ -31,6 +31,12 @@
             
                 </el-menu-item>
             </router-link>
+            <router-link  to="/movie/movieSearch"  v-if="routes['/movie/movieSearch']" >
+                <el-menu-item index="/movie/movieSearch">
+                    <i class="fa fa-file-video-o" aria-hidden="true"></i> 电影搜索
+            
+                </el-menu-item>
+            </router-link>
             
             <!-- 二级菜单 示例-->
             <el-submenu index="错误页面" v-if="routes['/errorpage/401'] || routes['/errorpage/404']">

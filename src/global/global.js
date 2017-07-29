@@ -62,26 +62,33 @@ export  const global = {
          * @param isLoading { Boolean } -可选 是否显示加载状态
          * @param isLogin { Boolean } -可选 是否登陆信息（移动端使用得较多，设置头部信息）
          */
-        get:function( url,options,sucCb,errorCb,isLoading,isLogin ){
+        get:function( url,options = {},sucCb,errorCb,isLoading = true,isLogin ){
             
             if(!url){
-                console.log('请传接口url');
+                console.log('接口url不能为空！');
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            // var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){
-                var loadingInstance = Loading.service();
+                var loadingInstance = Loading.service({text:"拼命加载中"});
             }
             Vue.http.get(url, options).then((response) => {
                 // 响应成功回调
                 //console.log('成功回调')
-                sucCb(response);
-                if(isLoading){
-                   loadingInstance.close();
-                }
+                
+                
+                setTimeout(function(){
+                    sucCb(response);
+                    if(isLoading){
+                        loadingInstance.close();
+                    }
+                    
+                },1000)
+                   
+                
             }, (response) => {
                 // 响应错误回调
                 //console.log('失败回调')
@@ -102,13 +109,13 @@ export  const global = {
          * @param isLoading { Boolean } -可选 是否显示加载状态
          * @param isLogin { Boolean } -可选 是否登陆信息（移动端使用得较多，设置头部信息）
          */
-        post:function( url,body,options,sucCb,errorCb,isLoading,isLogin ){
+        post:function( url,body,options,sucCb,errorCb,isLoading = true,isLogin ){
             if(!url){
-                console.log('请传接口url');
+                console.log('接口url不能为空！');
                 return false ;
             }
             //lss 2017-6-28 补默认laoding状态
-            var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
+            // var isLoading = isLoading===undefined ||(isLoading!==undefined && isLoading !== false )? true : false;  
 
             //遮罩层
             if(isLoading){

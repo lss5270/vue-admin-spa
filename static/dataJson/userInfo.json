@@ -18,6 +18,7 @@
                 "/index/personalInfo":true,
             	"/example/tableList":true,
                 "/movie/newMovie":true,
+                "/movie/movieSearch":true,
         		"/errorpage/401":false,
         		"/errorpage/404":false,
                 "/example/form":true,

@@ -1,24 +1,25 @@
 <template>
   <div class="app-container">
     <!-- 搜索条件 -->
-    <!-- <div class="filter-container">
-      <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="标题" v-model="listQuery.title">
-      </el-input>
+    <div class="filter-container">
+          <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="明星、导演姓名" v-model="listQuery.name">
+          </el-input>
 
-     
+            <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="电影类型" v-model="listQuery.type">
+            </el-input>
 
-      <el-select clearable class="filter-item" style="width: 130px" v-model="listQuery.type" placeholder="类型">
+      <!-- <el-select clearable class="filter-item" style="width: 130px" v-model="listQuery.type" placeholder="类型">
         <el-option v-for="item in  typeOptions" :key="item.key" :label="item.display_name+'('+item.key+')'" :value="item.key">
         </el-option>
-      </el-select>
+      </el-select> -->
 
       <el-button class="filter-item" type="primary" v-waves icon="search" @click="handleFilter">搜索</el-button>
-      <el-button class="filter-item" type="primary" @click="handleCreate"  icon="edit">添加</el-button>
+      <!-- <el-button class="filter-item" type="primary" @click="handleCreate"  icon="edit">添加</el-button>
 
       <el-button class="filter-item" type="primary" @click="handleDelAll"  icon="edit">批量删除</el-button>
-      <el-button class="filter-item" type="primary" icon="document" @click="handleDownload">导出</el-button>
+      <el-button class="filter-item" type="primary" icon="document" @click="handleDownload">导出</el-button> -->
      
-    </div> -->
+    </div>
 
     
    
@@ -160,7 +161,7 @@ export default {
             pageSize: 10,
 
             // importance: undefined,
-            title: '',
+            name: '',
             type: null,//类型
                
         },
@@ -186,7 +187,7 @@ export default {
   mounted() {
     var vm = this;
 
-    vm.getList();
+    // vm.getList();
 
 
 
@@ -209,8 +210,13 @@ export default {
            
         // })
         // return false;
-
-        global.get( api.in_theaters,{params: {"count":vm.listQuery.pageSize,"start":vm.listQuery.currPage -1 }},function(res){
+        let par = {
+            "count": vm.listQuery.pageSize,
+            "start": vm.listQuery.currPage -1,
+            "q": vm.listQuery.name,         //明星、导演姓名
+            "tag": vm.listQuery.type,       //类型
+        };
+        global.get( api.movieSearch,{params: par},function(res){
                 //console.log('-------获取到数据：',JSON.stringify(res) )
                 var data = res.body;
 

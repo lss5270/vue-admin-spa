@@ -27,7 +27,10 @@ const PersonalInfo = _import('index/personalInfo');
 const Readme = _import('index/readme');
 /* example*/
 const TableList = _import('example/tableList');
+
+// 豆瓣电影
 const NewMovie = _import('movie/newMovie');
+const MovieSearch = _import('movie/movieSearch');
 
 
 const Form = _import('example/form');
@@ -101,6 +104,15 @@ export const constantRouterMap = [
     // icon: 'EXCEL',
     noDropdown: true,
     children: [{ path: 'newMovie', component: NewMovie, name: '热映电影列表' }]
+  },
+  {
+    path: '/movie',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '',
+    // icon: 'EXCEL',
+    noDropdown: true,
+    children: [{ path: 'movieSearch', component: MovieSearch, name: '电影搜索' }]
   },
 
   {

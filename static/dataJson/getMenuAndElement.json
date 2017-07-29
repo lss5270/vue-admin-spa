@@ -49,6 +49,17 @@
             "set": true
           },
           {
+            "id": "100022",
+            "menuName": "电影搜索",
+            "url": "/movie/movieSearch",
+            "icon": "fa-clock-o",
+            "remark": null,
+            "seqno": 20,
+            "parentId": null,
+            "type": 252690,
+            "set": true
+          },
+          {
             "id": "10003",
             "menuName": "form表单编辑",
             "url": "/example/form",

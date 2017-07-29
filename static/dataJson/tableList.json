@@ -2,8 +2,8 @@
   "resultCode": "0",
   "resultMsg": "",
   "data": {
-    "currPage": 2,
-    "total": 88,
+    "currPage": 1,
+    "total": 8,
     
     "pageSize": 10,
     "data": [
