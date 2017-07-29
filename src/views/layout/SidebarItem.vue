@@ -4,12 +4,12 @@
         <!-- 菜单权限json（调试专用）：==={{ routes | json }} -->
         <template v-if="routes">
             <!-- 一级菜单 示例-->
-            <router-link  to="/index/readme"  v-if="routes['/index/readme']" >
+           <!--  <router-link  to="/index/readme"  v-if="routes['/index/readme']" >
                 <el-menu-item index="/index/readme">
                     <i class="el-icon-star-on" aria-hidden="true"></i> 系统说明
             
                 </el-menu-item>
-            </router-link>
+            </router-link> -->
 
             <router-link  to="/index/personalInfo"  v-if="routes['/index/personalInfo']" >
                 <el-menu-item index="/index/personalInfo">

@@ -4,12 +4,24 @@
             <el-col :span="8">
                 
                 <div class="user_img" >
-                    <img :src="personalInfo.avatar" alt="用户头像" >
+                    <!-- <img :src="personalInfo.avatar" alt="用户头像" >
                     <p>
                         <button type="button" class="el-button filter-item el-button--primary" @click="uploadAvatar()">
                             <i class="fa fa-cloud-upload" aria-hidden="true"></i><span>上传头像</span>
                         </button>
-                    </p>
+                    </p> -->
+
+                    <img v-if="newImageUrl" :src="newImageUrl" alt="用户头像" >
+                    <img v-else :src="personalInfo.avatar" alt="用户头像" >
+
+                    <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                     <!--  <img v-if="imageUrl" :src="imageUrl" class="avatar"> -->
+                      <!-- <i v-else class="el-icon-plus avatar-uploader-icon"></i> -->
+                        <button type="button" class="el-button filter-item el-button--primary" style="margin-top:10px">
+                            <i class="fa fa-cloud-upload" aria-hidden="true"></i><span>上传头像</span>
+                        </button>
+                    </el-upload>
+
                 </div>
                 
             </el-col>
@@ -93,7 +105,8 @@ export default {
   data() {
     return {
         editable:false,
-        personalInfo:{}
+        personalInfo:{},
+        newImageUrl: ''
     }
   },
   computed: {
@@ -132,6 +145,23 @@ export default {
     uploadAvatar(){
         alert('稍后补上')
     },
+
+    handleAvatarSuccess(res, file) {
+       this.newImageUrl = URL.createObjectURL(file.raw);
+       alert("修改头像成功")
+    },
+    beforeAvatarUpload(file) {
+       const isJPG = file.type === 'image/jpeg';
+       const isLt2M = file.size / 1024 / 1024 < 2;
+
+       if (!isJPG) {
+         this.$message.error('上传头像图片只能是 JPG 格式!');
+       }
+       if (!isLt2M) {
+         this.$message.error('上传头像图片大小不能超过 2MB!');
+       }
+       return isJPG && isLt2M;
+    }
 
   }
 };
