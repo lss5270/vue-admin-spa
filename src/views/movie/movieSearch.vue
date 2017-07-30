@@ -1,5 +1,9 @@
 <template>
   <div class="app-container">
+    <h2 style="color:red">
+        注意：此页面使用了开放api，在线访问会造成跨域未授权！！请使用本地服务访问（npm run dev）。例如：运行npm run dev后，在明星姓名输入框，输入“赵丽颖”，然后点击搜索按钮，即可搜索到数据。支持分页和搜索功能。
+    </h2>
+
     <!-- 搜索条件 -->
     <div class="filter-container">
           <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="明星、导演姓名" v-model="listQuery.name">

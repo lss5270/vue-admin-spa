@@ -193,7 +193,7 @@ export  const global = {
         
         /**
          * 移动端弹窗，样式文件已写在配置依赖里
-         * 使用方法 请参照 http://27.61.80.66:3000//src/html/test/popupTest.html
+         * 使用方法 请参照 http://
          * @param
          * @param
          */
