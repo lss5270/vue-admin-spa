@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 import {global} from 'src/global/global';
 import {api} from 'src/global/api';
-import store from '../../store';
+// import store from '../../store';
 import { Message } from 'element-ui';
 
 const user = {
@@ -78,7 +78,7 @@ const user = {
     },
 
     // 获取用户信息
-    GetInfo({ commit, state }) {
+    GetInfo({ dispatch,commit, state }) {
         return new Promise((resolve, reject) => {
             global.get( api.getUserInfo,{params:{'userId':state.uid}}, function(res){
                   console.log('-------根据id获取用户信息：',JSON.stringify(res) )
@@ -93,7 +93,8 @@ const user = {
                              commit('SET_USERINFO', res);
 
                              //获取到信息时同时设置用户菜单权限
-                             store.dispatch('GenerateRoutes', res.permissions);
+                             // store.dispatch('GenerateRoutes', res.permissions); 等同于
+                             dispatch('GenerateRoutes', res.permissions);
 
                              resolve();
                   }else{
@@ -153,7 +154,8 @@ const user = {
     ChangeRole({ commit }, role) {
       return new Promise(resolve => {
         // commit('SET_ROLES', [role]);
-       store.dispatch('GenerateRoutes', res.permissions);
+       //store.dispatch('GenerateRoutes', res.permissions);
+        dispatch('GenerateRoutes', res.permissions);
         resolve();
       })
     }

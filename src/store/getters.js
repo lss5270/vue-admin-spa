@@ -9,7 +9,7 @@ const getters = {
   visitedViews: state => state.app.visitedViews, //快速导航tab
   
   permission_routers: state => {
-    // 对应permission.js中的state
+    // 对应permission.js中的state.routers
         
             return  state.permission.routers;
        

@@ -11,6 +11,7 @@
       components: { SidebarItem },
       computed: {
         ...mapGetters([
+          // 映射 this.permission_routers 为 store.getters.permission_routers
           'permission_routers'
         ])
       }

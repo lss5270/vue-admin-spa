@@ -111,6 +111,7 @@ export default {
   },
   computed: {
         ...mapGetters({
+            // 映射 this.personalInfo_init 为 store.getters.userInfo
             personalInfo_init:'userInfo'
         })
     },

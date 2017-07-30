@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
+    // import { mapGetters } from 'vuex';
     import { isEmail } from 'utils/validate';
     import md5 from 'blueimp-md5';
     // import { getQueryObject } from 'utils';
@@ -89,9 +89,10 @@
         }
       },
       computed: {
-        ...mapGetters([
-          'auth_type'
-        ])
+        // ...mapGetters([
+        //   // 映射 this.auth_type 为 store.getters.auth_type。已删除
+        //   'auth_type'
+        // ])
       },
       methods: {
         handleLogin() {
