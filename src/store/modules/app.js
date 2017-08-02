@@ -1,4 +1,7 @@
-import Cookies from 'js-cookie';
+//像这种没有路径和文件夹名字的模块，从哪里查找？
+//从node_modules文件夹中查找'js-cookie'的文件夹，然后文件夹中查找package.json文件，
+//然后从json文件中查找'main'属性值:'src/js.cookie.js'
+import Cookies from 'js-cookie';  
 
 const app = {
   state: {

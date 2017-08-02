@@ -126,7 +126,7 @@ export default {
         // list: null,
         // listLoading: true,
 
-        list: null,//表格list
+        list: null,//表格list [].push({})
         total: null,
         listLoading: true,
         listQuery: {
@@ -139,12 +139,12 @@ export default {
                
         },
         temp: {
-            "chnlId": "22",
-            "hisChnlId": "",
-            "chnlName": "",
-            "state": "",
-            "isavailable": "",
-            "orderNum": 10
+          "chnlId": "",
+          "hisChnlId": "",
+          "chnlName": "",
+          "state": "",
+          "isavailable": "",
+          "orderNum": 10
         },
         typeOptions:[
           { key: '001', display_name: '类型1' },
@@ -158,7 +158,7 @@ export default {
     }
   },
   mounted() {
-    var vm = this;
+    let vm = this;
 
     vm.getList();
 
@@ -166,9 +166,21 @@ export default {
 
   },
   methods: {
+    initTemp(){
+      let vm = this;
+
+      vm.temp = {
+          "chnlId": "",
+          "hisChnlId": "",
+          "chnlName": "",
+          "state": "",
+          "isavailable": "",
+          "orderNum": 10
+      }
+    },
     //获取列表数据
     getList() {
-        var vm = this;
+        let vm = this;
 
           vm.listLoading = true;
           // fetchList(this.listQuery).then(response => {
@@ -178,7 +190,7 @@ export default {
           // })
         global.get( api.tableList,{params: vm.listQuery },function(res){
                 //console.log('-------获取到数据：',JSON.stringify(res) )
-                var data = res.body;
+                let data = res.body;
                if(data.resultCode == 0){ 
                     
                     vm.list = data.data.data;
@@ -206,8 +218,8 @@ export default {
         },false)
 
         //请求开发环境接口
-        // var url = '/urm-mt-interface/service/hisForHzfwhService/';
-        // var par = {
+        // let url = '/urm-mt-interface/service/hisForHzfwhService/';
+        // let par = {
         //           "isavailable": "Y",
         //           "beginDate": "20170616",
         //           "endDate": "20170616",
@@ -228,7 +240,7 @@ export default {
 
         // global.get( url,{params: par },function(res){
         //         console.log('-------开发环境获取到数据：',JSON.stringify(res) )
-        //         var data = res.body;
+        //         let data = res.body;
         //        if(data.resultCode == 0){ 
                     
                    
@@ -247,7 +259,7 @@ export default {
     },
     //编辑
     handleEdit(index,row){
-        var vm = this;
+        let vm = this;
         console.log('编辑的row：',index,'-----',row);
         //跳页面进行修改
         //this.$router.push('/example/form'); 
@@ -255,14 +267,14 @@ export default {
     },
     //单个删除
     handleDelete(index,row){
-        var vm = this;
+        let vm = this;
         console.log('单个删除选择的row：',index,'-----',row);
         //前端删除。
         vm.list.splice(index,1)
     },
     //批量删除
     handleDelAll(){
-        var vm = this;
+        let vm = this;
         console.log('批量删除选择的row：',vm.multipleSelection)
     },
     //搜索
@@ -282,13 +294,15 @@ export default {
     },
     //新增
     handleCreate() {
-        
+        //每次点击新增时 重置下新增表单数据，避免双向绑定的影响
+        this.initTemp();
+
         this.dialogFormVisible = true;
     },
     //新增提交
     handleCreateSubmit(){
-        var vm = this;
-        console.log('新增入参：',vm.temp,vm.list)
+        let vm = this;
+        console.log('新增入参：',vm.temp)
 
         //这里作演示用，正式新增 请提交到接口
         vm.list.push(vm.temp)
@@ -301,7 +315,7 @@ export default {
     },
 
     handleDownload() {
-      var vm = this;
+      let vm = this;
 
       require.ensure([], () => {
         const { export_json_to_excel } = require('vendor/Export2Excel');

@@ -97,7 +97,7 @@
 </template>
 
 <script>
- import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 import {global} from 'src/global/global';
 import {api} from 'src/global/api';
 
@@ -106,7 +106,8 @@ export default {
     return {
         editable:false,
         personalInfo:{},
-        newImageUrl: ''
+        newImageUrl: '',
+        //personalInfo_init:store.getters.userInfo //115行相当于这个效果
     }
   },
   computed: {

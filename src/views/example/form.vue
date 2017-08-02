@@ -162,6 +162,17 @@
           },
           resetForm(formName) {
             this.$refs[formName].resetFields();
+            // 等同于
+            // this.ruleForm = {
+            //   name: '',
+            //   region: '',
+            //   date1: '',
+            //   date2: '',
+            //   delivery: false,
+            //   type: [],
+            //   resource: '',
+            //   desc: ''
+            // }
           }
         }
       }

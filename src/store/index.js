@@ -7,7 +7,7 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
-import app from './modules/app';
+import app from './modules/app';  // ./modules/app.js
 import user from './modules/user';
 import permission from './modules/permission';
 import getters from './getters';
@@ -20,7 +20,7 @@ const store = new Vuex.Store({
     user,
     permission
   },
-  getters 			//getters:getters
+  getters :getters			//getters:getters
 });
 
 export default store
