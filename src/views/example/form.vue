@@ -139,6 +139,23 @@
                 },false)
             },
           submitForm(formName) {
+            let oldDate = this.ruleForm.date1;
+            //Thu Aug 03 2017 00:00:00 GMT+0800 (中国标准时间)这种时间格式如何转成我们需要的格式 2017-8-3 ?
+            //new Date()获取当前时间
+            //1.可以通过new Date().getFullYear()  获取到年
+            //2.可以通过new Date().getMonth()     获取到月(0~11) 1~12
+            //3.可以通过new Date().getDate()      获取到日
+            //4.可以通过new Date().getDay()       获取到星期
+            //6.可以通过new Date().getTime()      获取到毫秒数
+            
+            let year = new Date(oldDate).getFullYear(),
+                month = new Date(oldDate).getMonth()+1,
+                day = new Date(oldDate).getDate();
+
+            let dateFormat = year+'-'+month+'-'+day;
+            console.log('当前选择时间:', dateFormat )
+
+            
             this.$refs[formName].validate((valid) => {
               if (valid) {
                     alert('已提交，提交参数请看控制台');
