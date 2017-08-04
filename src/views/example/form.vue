@@ -141,7 +141,7 @@
           submitForm(formName) {
             let oldDate = this.ruleForm.date1;
             //Thu Aug 03 2017 00:00:00 GMT+0800 (中国标准时间)这种时间格式如何转成我们需要的格式 2017-8-3 ?
-            //new Date()获取当前时间
+            //new Date()获取当前时间。括号可放时间对象参数
             //1.可以通过new Date().getFullYear()  获取到年
             //2.可以通过new Date().getMonth()     获取到月(0~11) 1~12
             //3.可以通过new Date().getDate()      获取到日
