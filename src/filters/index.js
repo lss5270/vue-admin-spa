@@ -76,7 +76,6 @@ export function formatTime(time, option) {
 }
 
 
-
 /* 数字 格式化*/
 export function nFormatter(num, digits) {
   const si = [

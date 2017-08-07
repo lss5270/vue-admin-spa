@@ -52,12 +52,12 @@ Vue.use(Router);
   **/
 
 export const constantRouterMap = [
-    { path: '/login', component: Login, hidden: true },
-    { path: '/authredirect', component: authRedirect, hidden: true },
-    { path: '/sendpwd', component: sendPWD, hidden: true },
-    { path: '/reset', component: reset, hidden: true },
-    { path: '/404', component: Err404, hidden: true },  //假地址时重定向
-    { path: '/401', component: Err401, hidden: true },  //无权限时重定向
+  { path: '/login', component: Login, hidden: true },
+  { path: '/authredirect', component: authRedirect, hidden: true },
+  { path: '/sendpwd', component: sendPWD, hidden: true },
+  { path: '/reset', component: reset, hidden: true },
+  { path: '/404', component: Err404, hidden: true },  //假地址时重定向
+  { path: '/401', component: Err401, hidden: true },  //无权限时重定向
 
   {
     path: '/',
@@ -83,7 +83,9 @@ export const constantRouterMap = [
     name: '',
     // icon: 'EXCEL',
     noDropdown: true,
-    children: [{ path: 'personalInfo', component: PersonalInfo, name: '个人信息' }]
+    children: [
+      { path: 'personalInfo', component: PersonalInfo, name: '个人信息' ,children:[{path:"/bb"}] }
+    ]
   },
 
   {

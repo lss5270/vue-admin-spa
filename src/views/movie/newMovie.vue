@@ -38,7 +38,7 @@
 
             <el-table-column label="海报" width="" align="center">
             <template scope="scope">
-                <a :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
+                <a target="_blank" :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
                     <img :src="scope.row.images.small" alt="" style="vertical-align: middle;">
                 </a>
                
@@ -54,14 +54,14 @@
 
             <el-table-column label="导演" width="" prop="directors[0].alt" sortable>
             <template scope="scope">
-              <a :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
+              <a target="_blank" :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
             </template>
           </el-table-column>
 
           <el-table-column label="主演" width="">
             <template scope="scope" >
                 <template class="" v-for="item in scope.row.casts">
-                    <p><a :href="item.alt">&nbsp;{{ item.name }}&nbsp;</a>、</p>
+                    <p><a target="_blank" :href="item.alt">&nbsp;{{ item.name }}&nbsp;</a>、</p>
                 </template>
                
             </template>
