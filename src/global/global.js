@@ -5,9 +5,10 @@ Vue.use(VueResource);
 import { Loading } from 'element-ui';
 
 import Cookies from 'js-cookie';
-const config = require('../../config');
-const {themeArray} = require('./themeArray');
-
+// const config = require('../../config');
+import config from '../../config';
+// const themeArray = require('./themeArray');
+import themeArray from './themeArray';
 //封装一些全局元素。如全站通用功能函数和http请求等
 
 export  const global = {
@@ -191,63 +192,6 @@ export  const global = {
         },
 		
         
-        /**
-         * 移动端弹窗，样式文件已写在配置依赖里
-         * 使用方法 请参照 http://
-         * @param
-         * @param
-         */
-        popupMobile: {
-            // 默认弹窗参数
-            defaultOpt: {
-                title: '弹框标题',
-                content: '告知当前状态，信息和解决方法'
-                , btn: ['确定']
-                , yes: function (index) {
-
-                }
-
-            }
-            // 关闭所有弹窗
-            , close: function () {
-                layer.closeAll();
-            }
-            // 普通信息弹窗
-            , msg: function (content,time) {
-                var t = this;
-                t.close();
-                layer.open({
-                    content: content
-                    , skin: 'msg' // footer（即底部对话框风格）、msg（普通提示）
-                    , time: 2 || time//2秒后自动关闭
-                });
-            }
-            // 加载中弹窗
-            , loading: function (txt) {
-                var t = this;
-                t.close();
-                layer.open({
-                    type: 2
-                    , content: '加载中' || txt
-                });
-            }
-            // 普通弹窗 含单标题和双标题 自定义弹框
-            , dialog: function (opt) {
-                var t = this;
-                t.close();
-                var newOpt = $.extend(t.defaultOpt, opt);
-
-                console.log(newOpt)
-
-                layer.open(newOpt);
-            }
-            // 自定义内容 弹窗
-            , dialog2: function (opt) {
-                var t = this;
-                t.close();
-                layer.open(opt);
-            }
-        },
         /**
          * 获取url参数
          */

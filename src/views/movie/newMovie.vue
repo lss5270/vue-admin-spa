@@ -3,28 +3,7 @@
     <h2 style="color:red">
         注意：此页面使用了开放api，在线访问会造成跨域未授权！！请使用本地服务访问（npm run dev）。例如：运行npm run dev后，进入该页面，即可搜索到数据。支持分页功能。
     </h2>
-    <!-- 搜索条件 -->
-    <!-- <div class="filter-container">
-      <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="标题" v-model="listQuery.title">
-      </el-input>
-
-     
-
-      <el-select clearable class="filter-item" style="width: 130px" v-model="listQuery.type" placeholder="类型">
-        <el-option v-for="item in  typeOptions" :key="item.key" :label="item.display_name+'('+item.key+')'" :value="item.key">
-        </el-option>
-      </el-select>
-
-      <el-button class="filter-item" type="primary" v-waves icon="search" @click="handleFilter">搜索</el-button>
-      <el-button class="filter-item" type="primary" @click="handleCreate"  icon="edit">添加</el-button>
-
-      <el-button class="filter-item" type="primary" @click="handleDelAll"  icon="edit">批量删除</el-button>
-      <el-button class="filter-item" type="primary" icon="document" @click="handleDownload">导出</el-button>
-     
-    </div> -->
-
     
-   
     <!-- 表格 v-loading.body="listLoading"-->
     <el-table ref="multipleTable" @selection-change="handleSelectionChange" :data="list"  element-loading-text="拼命加载中" border fit highlight-current-row  >
          <el-table-column type="selection" width="50">

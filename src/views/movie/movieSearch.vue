@@ -53,12 +53,15 @@
               {{ scope.row.title }}
             </template>
           </el-table-column>
-
-            <el-table-column label="导演" width="" prop="directors[0].alt" sortable>
-            <template scope="scope">
-              <a :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
-            </template>
-          </el-table-column>
+            
+            <!-- 出错原因未知，先注释 -->
+            <!-- <template v-if=" directors "> -->
+                 <!--  <el-table-column label="导演" width="" prop="directors[0].alt" sortable>
+                    <template scope="scope">
+                      <a :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
+                    </template>
+                  </el-table-column> -->
+            <!-- </template> -->
 
           <el-table-column label="主演" width="">
             <template scope="scope" >

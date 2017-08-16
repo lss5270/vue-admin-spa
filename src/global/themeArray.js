@@ -1,5 +1,5 @@
 //主题文件数组
-export  const themeArray = [
+const themeArray = [
                       "Pagination",
                       "Dialog",
                       "Autocomplete",
@@ -64,4 +64,4 @@ export  const themeArray = [
                     ]
     
 
-// export default themeArray
+export default themeArray

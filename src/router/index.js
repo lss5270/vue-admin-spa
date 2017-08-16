@@ -51,7 +51,7 @@ Vue.use(Router);
   * meta : { role: ['admin'] }  will control the page role
   **/
 
-export const constantRouterMap = [
+const constantRouterMap = [
   { path: '/login', component: Login, hidden: true },
   { path: '/authredirect', component: authRedirect, hidden: true },
   { path: '/sendpwd', component: sendPWD, hidden: true },
@@ -176,6 +176,6 @@ export default new Router({
   routes: constantRouterMap
 });
 
-export const asyncRouterMap = [
+// export const asyncRouterMap = [
   
-];
+// ];
