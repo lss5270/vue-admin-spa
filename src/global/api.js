@@ -10,7 +10,7 @@ let url = {
 
     //staticPath:config.dev.staticPath,       //开发环境静态资源路径
     // 条件 ? 结果1 : 结果2 //三元运算符，表示条件为true时，等式的结果就为结果1（'./'），否则为结果2('/static/')。
-    // development为开发环境（npm run dev），另外一个是生产环境（www.jd.com）
+    // development为开发环境（npm run dev），另外一个production是生产环境（www.jd.com）
     // 生产环境时staticPath的值为'./'，开发环境时staticPath的值为'/static/'。
     staticPath: process.env.NODE_ENV !== 'development' ?  config.build.staticPath: config.dev.staticPath
 };
