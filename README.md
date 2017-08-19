@@ -1,9 +1,9 @@
 # 后台管理系统 vue-admin-spa 1.0（qq交流群：645582193） #
-使用到的技术：vue + vue-resource + vue-router + vuex(大型spa必备) + element-ui + ES6 + webpack + npm 
+使用到的技术栈：vue + vue-resource + vue-router + vuex(spa必备) + element-ui + ES6 + webpack + npm 
 
 [测试地址](https://lss5270.github.io/vue-admin-spa-demo)
 
-# 注意：最近多人多反应项目无法正常运行，是因为升级node到最新版的8.x版本导致的。请换回使用6.0~6.11之间的node版本，node版本可自行下载，也可到我下方的群里下载 ~！#
+# 注意：最近多人多反应项目无法正常运行，是因为升级node到最新版的8.x版本导致的。请换回使用6.0~6.11之间的稳定版即可，node版本可自行下载，也可到我下方的群里下载 ~！#
 ## 前言
 本项目借鉴vue脚手架和三个项目（取长补短）搭建而成，并且不断完善，目的是为了更接近和适合大家的项目需求，更适合2次开发，以下几点重写过：
 - 登陆注册（含MD5加密）
