@@ -48,8 +48,9 @@
 
 ## 开发
 ```bash
-   
-    # 安装依赖
+    # 克隆代码
+    git clone XX
+    # 安装依赖
     npm install
     #or 直接解压node_modules.7z到当前位置 （比较适合新手）。
 
