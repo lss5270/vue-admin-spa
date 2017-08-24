@@ -49,7 +49,7 @@
 ## 开发
 ```bash
     # 克隆代码
-    git clone XX
+    git clone https://github.com/lss5270/vue-admin-spa.git
     # 安装依赖
     npm install
     #or 直接解压node_modules.7z到当前位置 （比较适合新手）。
