@@ -132,7 +132,7 @@
 目前只有用户信息、菜单权限、app配置相关状态使用vuex存储在全局，其它数据都由每个业务页面自己管理。
 
 
-## License（执照）
+## License
 
 [MIT](http://opensource.org/licenses/MIT)
 
