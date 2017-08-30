@@ -97,6 +97,11 @@
     1.http://element.eleme.io/#/zh-CN/component/installation
     
 ```
+## 关于.vue文件中背景图片路径，打包到生产环境路径404的问题修复
+```
+    具体修复方法，参照Issues中的 #6问题
+    
+```
 
 ## 目录结构
 ```shell
