@@ -134,11 +134,11 @@
                             学生信息添加
                         </el-menu-item>
                     </router-link>
-                    <router-link  class="menu-indent" to="/studentsManage/studentUpdate" >
+                    <!-- <router-link  class="menu-indent" to="/studentsManage/studentUpdate" >
                         <el-menu-item index="/studentsManage/studentUpdate">
                             学生信息修改
                         </el-menu-item>
-                    </router-link>
+                    </router-link> -->
                     
                
             </el-submenu>
