@@ -26,7 +26,10 @@
         		"/example/mixin":true,
                 "/example/31":false,
                 "/systemSet/permissionsManage":true,
-                "/systemSet/loginLog":true
+                "/systemSet/loginLog":true,
+                "/studentsManage/studentAdd":true,
+                "/studentsManage/studentUpdate":true,
+                "/studentsManage/studentList":true
         		
         	},
             "explain":"以上只是部分字段，如需要可自行添加。登录接口可只返回token和uid字段，或者只返回token，那么获取用户信息时无法传参，接口直接根据cookie来返回用户信息"

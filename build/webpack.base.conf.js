@@ -10,7 +10,9 @@ const src = path.resolve(__dirname, '../src');
 
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: './src/main.js',
+        app1: './src/main.js',
+        app2: './src/main.js'
     },
     output: {
         path: config.build.assetsRoot,

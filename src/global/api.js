@@ -17,6 +17,7 @@ let url = {
 
 //----------------请注意：如果正式环境，不需要本地json数据模拟，请删除以上代码和api中的模拟接口。----------------
 
+let nodeApiBaseUrl = 'http://localhost:3000';
 
 export const api = {
 
@@ -32,6 +33,13 @@ export const api = {
             //"in_theaters":url.staticPath+"/dataJson/in_theaters.json",  //获取电影列表,json
             "in_theaters":"/v2/movie/in_theaters",  //获取电影列表
             "movieSearch":"/v2/movie/search",       //电影搜索
+
+            //以下接口为实际接口，需要下载node项目源码 
+            "addStudents": nodeApiBaseUrl+"/api/addStudents",       //学生信息添加
+            "studentUpdate": nodeApiBaseUrl+"/api/studentUpdate",   //学生信息修改
+            "studentList": nodeApiBaseUrl+"/api/queryStudents",     //学生信息列表
+            "delStudents": nodeApiBaseUrl+"/api/delStudents",       //学生信息删除
+            "queryStudentsItem": nodeApiBaseUrl+"/api/queryStudentsItem",     //学生单条详情
 
             '0':url.apiUrl+'',//获取科室接口
             '1':url.apiUrl+'',

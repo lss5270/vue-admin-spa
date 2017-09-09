@@ -161,6 +161,9 @@
                     alert('已提交，提交参数请看控制台');
                     console.log('提交入参：',this.ruleForm);
 
+                    // global.post('http://localhost:3000/api/addStudents',this.ruleForm,function(res){
+                    //     alert('插入数据成功，接口返回的数据为：',res)
+                    // })
                     //正式编程以下代码请放到接口成功回调函数中
                     Message({
                         showClose: true,

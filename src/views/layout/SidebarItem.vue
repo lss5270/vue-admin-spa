@@ -120,6 +120,29 @@
                
             </el-submenu>
 
+            <el-submenu index="学生信息管理" > 
+                <template slot="title">
+                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> 学生信息管理
+                </template>
+                    <router-link  class="menu-indent" to="/studentsManage/studentList" >
+                        <el-menu-item index="/studentsManage/studentList">
+                            学生信息列表
+                        </el-menu-item>
+                    </router-link>
+                    <router-link  class="menu-indent" to="/studentsManage/studentAdd" >
+                        <el-menu-item index="/studentsManage/studentAdd">
+                            学生信息添加
+                        </el-menu-item>
+                    </router-link>
+                    <router-link  class="menu-indent" to="/studentsManage/studentUpdate" >
+                        <el-menu-item index="/studentsManage/studentUpdate">
+                            学生信息修改
+                        </el-menu-item>
+                    </router-link>
+                    
+               
+            </el-submenu>
+
         </template>    
         
 
