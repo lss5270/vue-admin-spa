@@ -18,12 +18,7 @@
                 </el-menu-item>
             </router-link>
 
-            <router-link  to="/example/tableList"  v-if="routes['/example/tableList']" >
-                <el-menu-item index="/example/tableList">
-                    <i class="fa fa-table" aria-hidden="true"></i> 示例表格
             
-                </el-menu-item>
-            </router-link>
 
             <router-link  to="/movie/newMovie"  v-if="routes['/movie/newMovie']" >
                 <el-menu-item index="/movie/newMovie">
@@ -34,6 +29,13 @@
             <router-link  to="/movie/movieSearch"  v-if="routes['/movie/movieSearch']" >
                 <el-menu-item index="/movie/movieSearch">
                     <i class="fa fa-file-video-o" aria-hidden="true"></i> 电影搜索
+            
+                </el-menu-item>
+            </router-link>
+
+            <router-link  to="/example/tableList"  v-if="routes['/example/tableList']" >
+                <el-menu-item index="/example/tableList">
+                    <i class="fa fa-table" aria-hidden="true"></i> 示例表格
             
                 </el-menu-item>
             </router-link>

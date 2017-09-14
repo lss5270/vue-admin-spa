@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <h2 style="color:red">
-        注意：此页面使用了开放api，在线访问会造成跨域未授权！！请使用本地服务访问（npm run dev）。例如：运行npm run dev后，进入该页面，即可搜索到数据。支持分页功能。
+        注意：此页面使用了豆瓣api，请求方式为jsonp，支持分页功能。
     </h2>
     
     <!-- 表格 v-loading.body="listLoading"-->
@@ -180,19 +180,51 @@ export default {
 
         vm.listLoading = true;
 
-        // vm.$http.get(api.in_theaters, {params: {'q':"11"},timeout:8000 }).then((response) => {
-        //     // 响应成功回调
-        //     var data = res.body;
+        //请求参数
+        let par = {
+              "count":vm.listQuery.pageSize,
+              "start":vm.listQuery.currPage -1 
+            };
 
-        //         console.log(data)
-        // }, (response) => {
-        //     // 响应错误回调
-        //     console.log('失败回调')
-           
-        // })
-        // return false;
+        // jsonp请求方式
+        vm.$http.jsonp('http://api.douban.com/v2/movie/in_theaters',{params: par}).then(res => {
+            console.log(res)
+            // success callback
+             //console.log('-------获取到数据：',JSON.stringify(res) )
+                var data = res.body;
 
-        global.get( api.in_theaters,{params: {"count":vm.listQuery.pageSize,"start":vm.listQuery.currPage -1 }},function(res){
+                console.log(data)
+
+                
+               if(data.subjects){ 
+                    
+                    vm.list = data.subjects;
+                    console.log('列表数据：',vm.list);
+                    vm.listQuery.currPage = data.start + 1; //页数开始
+                    vm.listQuery.pageSize = data.count;     //每页多少条
+                    vm.total = data.total;
+
+                    vm.listLoading = false;
+                    
+               }else{
+                    //alert(res.body.resultMsg)
+                    Message({
+                        showClose: true,
+                        message: res.body.resultMsg,
+                        type: 'error'
+                    });
+                    vm.listLoading = false;
+               }
+        }, res => {
+            // error callback
+            console.log(res)
+
+            vm.listLoading = false;
+        });
+        // jsonp请求方式 end
+        return false;
+
+        global.get( api.in_theaters,{params: par},function(res){
                 //console.log('-------获取到数据：',JSON.stringify(res) )
                 var data = res.body;
 

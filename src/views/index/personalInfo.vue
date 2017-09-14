@@ -152,7 +152,7 @@ export default {
             series: [{
                 name: '收入',
                 type: 'bar',
-                data: [8000, 12000, 13600, 11000, 11000, 18000]
+                data: [800, 1200, 1360, 1100, 1100, 1800]
             }]
         });
         // 绘制兴趣图表
@@ -255,6 +255,13 @@ export default {
     }
     #income,#interest{
         width: 100%;
-        height: 500px;
+        height: 400px;
+    }
+
+    .el-form-item{
+      margin-bottom: 0;
+    }
+    .avatar-uploader{
+      margin-bottom: 32px;
     }
 </style>
