@@ -92,6 +92,9 @@
     本项目使用了两套图标系统，具体使用方法参照以下官方链接:
     1.http://element.eleme.io/#/zh-CN/component/icon
     2.http://fontawesome.io/icons/
+    使用方法：
+    a.在index.html中引入<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    b.在使用图标的地方放置图标<i class="fa fa-home" aria-hidden="true"></i>
 ```
 ## 关于UI系统
 ```
