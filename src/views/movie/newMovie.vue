@@ -187,7 +187,7 @@ export default {
             };
 
         // jsonp请求方式
-        vm.$http.jsonp('http://api.douban.com/v2/movie/in_theaters',{params: par}).then(res => {
+        vm.$http.jsonp('https://api.douban.com/v2/movie/in_theaters',{params: par}).then(res => {
             console.log(res)
             // success callback
              //console.log('-------获取到数据：',JSON.stringify(res) )

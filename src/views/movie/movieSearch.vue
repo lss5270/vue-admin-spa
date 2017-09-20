@@ -214,7 +214,7 @@ export default {
             "tag": vm.listQuery.type,       //类型
         };
         // jsonp请求方式
-        vm.$http.jsonp('http://api.douban.com/v2/movie/search',{params: par}).then(res => {
+        vm.$http.jsonp('https://api.douban.com/v2/movie/search',{params: par}).then(res => {
             console.log(res)
             // success callback
              var data = res.body;
