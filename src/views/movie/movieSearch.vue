@@ -209,7 +209,7 @@ export default {
         //请求参数
         let par = {
             "count": vm.listQuery.pageSize,
-            "start": vm.listQuery.currPage -1,
+            "start": (vm.listQuery.currPage-1)*vm.listQuery.pageSize,
             "q": vm.listQuery.name,         //明星、导演姓名
             "tag": vm.listQuery.type,       //类型
         };
@@ -226,8 +226,8 @@ export default {
                  
                  vm.list = data.subjects;
                  console.log('列表数据：',vm.list);
-                 vm.listQuery.currPage = data.start + 1; //页数开始
-                 vm.listQuery.pageSize = data.count;     //每页多少条
+                 // vm.listQuery.currPage = data.start + 1; //页数开始
+                 // vm.listQuery.pageSize = data.count;     //每页多少条
                  vm.total = data.total;
 
                  vm.listLoading = false;

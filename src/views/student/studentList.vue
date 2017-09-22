@@ -188,28 +188,15 @@ export default {
 
     vm.getList();
 
-
-
   },
   methods: {
-    initTemp(){
-      let vm = this;
-
-      vm.temp = {
-          "chnlId": "",
-          "hisChnlId": "",
-          "chnlName": "",
-          "state": "",
-          "isavailable": "",
-          "orderNum": 10
-      }
-    },
+    
     //获取列表数据
     getList() {
         let vm = this;
 
-          vm.listLoading = true;
-          
+        vm.listLoading = true;
+
         global.get( api.studentList,{params: vm.listQuery },function(res){
                 //console.log('-------获取到数据：',JSON.stringify(res) )
                 let data = res.body;
@@ -238,8 +225,6 @@ export default {
             
             vm.listLoading = false;
         },false)
-
-        
 
     },
     //编辑
@@ -276,9 +261,6 @@ export default {
             //   message: '已取消删除'
             // });          
         });
-
-        
-        
 
     },
     //调取删除接口的删除方法

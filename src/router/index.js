@@ -77,49 +77,27 @@ const constantRouterMap = [
     name: '',
     // icon: 'EXCEL',
     noDropdown: true,
-    children: [{ path: 'readme', component: Readme, name: '系统说明' }]
+    children: [
+        { path: 'readme', component: Readme, name: '系统说明' },
+        { path: 'personalInfo', component: PersonalInfo, name: '个人信息' }
+    ]
   },
+  
+  
+
   {
-    path: '/index',
+    path: '/movie',
     component: Layout,
     redirect: 'noredirect',
     name: '',
     // icon: 'EXCEL',
     noDropdown: true,
     children: [
-      { path: 'personalInfo', component: PersonalInfo, name: '个人信息' ,children:[{path:"/bb"}] }
+        { path: 'newMovie', component: NewMovie, name: '热映电影列表' },
+        { path: 'movieSearch', component: MovieSearch, name: '电影搜索' }
     ]
   },
-
-  {
-    path: '/example',
-    component: Layout,
-    redirect: 'noredirect',
-    name: '',
-    // icon: 'EXCEL',
-    noDropdown: true,
-    children: [{ path: 'tableList', component: TableList, name: '示例表格' }]
-  },
-
-  {
-    path: '/movie',
-    component: Layout,
-    redirect: 'noredirect',
-    name: '',
-    // icon: 'EXCEL',
-    noDropdown: true,
-    children: [{ path: 'newMovie', component: NewMovie, name: '热映电影列表' }]
-  },
-  {
-    path: '/movie',
-    component: Layout,
-    redirect: 'noredirect',
-    name: '',
-    // icon: 'EXCEL',
-    noDropdown: true,
-    children: [{ path: 'movieSearch', component: MovieSearch, name: '电影搜索' }]
-  },
-
+  
   {
     path: '/errorpage',
     component: Layout,
@@ -155,6 +133,7 @@ const constantRouterMap = [
       
     ]
   },
+  
   {
     path: '/example',
     component: Layout,
@@ -162,7 +141,7 @@ const constantRouterMap = [
     name: '综合实例',
     // icon: 'zonghe',
     children: [
-      
+      { path: 'tableList', component: TableList, name: '示例表格' },
       { path: 'form', component: Form, name: 'form表单编辑' },
 
       { path: 'tinymce', component: Tinymce, name: '富文本编辑器' },
