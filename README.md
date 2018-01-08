@@ -63,7 +63,7 @@
 ```[下载node_modules](http://pan.baidu.com/s/1eSL4I8y)
 ```
 
-浏览器访问 http://localhost:2017
+浏览器访问 http://localhost:2018
 
 ## 发布
 ```bash
