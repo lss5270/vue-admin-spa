@@ -4,11 +4,10 @@ Vue.use(VueResource);
 
 import { Loading } from 'element-ui';
 
-import Cookies from 'js-cookie';
-// const config = require('../../config');
 import config from '../../config';
-// const themeArray = require('./themeArray');
+
 import themeArray from './themeArray';
+
 //封装一些全局元素。如全站通用功能函数和http请求等
 
 export  const global = {
@@ -140,58 +139,6 @@ export  const global = {
             })
         },
 
-       
-        
-        /**
-         * author lss
-         * 日期格式化,传入为毫秒数,转出时间格式为 ：2016-6-6 12:00:00
-         * @objD 必填，格式为毫秒数
-         */
-        formatDate: function (objD) {
-            if (!objD) {
-                return '';
-            }
-
-            objD = new Date(objD);
-            var str;
-            var yy = objD.getYear();
-            if (yy < 1900) yy = yy + 1900;
-            var MM = objD.getMonth() + 1;
-            if (MM < 10) MM = '0' + MM;
-            var dd = objD.getDate();
-            if (dd < 10) dd = '0' + dd;
-            var hh = objD.getHours();
-            if (hh < 10) hh = '0' + hh;
-            var mm = objD.getMinutes();
-            if (mm < 10) mm = '0' + mm;
-            var ss = objD.getSeconds();
-            if (ss < 10) ss = '0' + ss;
-            str = yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
-            return (str);
-        },
-        /**
-         * author lss
-         * 日期格式化,传入为毫秒数,转出时间格式为 ：2016-6-6
-         * @objD 必填，格式为毫秒数
-         */
-        formatDate2: function (objD) {
-            if (!objD) {
-                return '';
-            }
-            objD = new Date(objD);
-            var str;
-            var yy = objD.getYear();
-            if (yy < 1900) yy = yy + 1900;
-            var MM = objD.getMonth() + 1;
-            //if(MM<10) MM = '0' + MM;
-            var dd = objD.getDate();
-            //if(dd<10) dd = '0' + dd;
-            //去掉0 我的圈子 加入圈子，布局放不下。。
-            str = yy + "-" + MM + "-" + dd;
-            return (str);
-        },
-		
-        
         /**
          * 获取url参数
          */

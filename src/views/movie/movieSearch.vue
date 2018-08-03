@@ -41,7 +41,7 @@
             <el-table-column label="海报" width="" align="center">
             <template scope="scope">
                 <a :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
-                    <img :src="scope.row.images.small" alt="" style="vertical-align: middle;">
+                    <img :src="scope.row.images.small" alt="" style="vertical-align: middle;max-width: 100%;">
                 </a>
                
             </template>

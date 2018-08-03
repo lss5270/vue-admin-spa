@@ -41,12 +41,7 @@ export const api = {
             "delStudents": nodeApiBaseUrl+"/api/delStudents",       //学生信息删除
             "queryStudentsItem": nodeApiBaseUrl+"/api/queryStudentsItem",     //学生单条详情
 
-            '0':url.apiUrl+'',//获取科室接口
-            '1':url.apiUrl+'',
-            '2':{
-                '1':null,
-                '2':null,
-            }
+            
     }
     
 
