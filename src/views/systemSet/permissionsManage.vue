@@ -88,7 +88,7 @@
            
 
            <!-- <el-checkbox-group v-model="smMenuBeanDtoList"> -->
-              <el-checkbox v-for="item in smMenuBeanDtoList" label="item.url" name="type" style="margin:0 15px 15px 0;"  v-model="item.set">{{ item.menuName }}</el-checkbox>
+              <el-checkbox v-for="item in smMenuBeanDtoList" :key="item" label="item.url" name="type" style="margin:0 15px 15px 0;"  v-model="item.set">{{ item.menuName }}</el-checkbox>
               
             <!-- </el-checkbox-group> -->
 
@@ -112,7 +112,7 @@
 import {global} from 'src/global/global';
 import {api} from 'src/global/api';
 
-import store from '../../store';
+import store from '@/store';
 
 export default {
   data() {

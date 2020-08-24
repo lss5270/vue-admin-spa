@@ -19,9 +19,9 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     const requestId = uuid(32, 12)
-    /*//const appId = Cookies.get('tax-app-id')
+    //const appId = Cookies.get('tax-app-id')
     const appId = sessionStorage['appId']
-    if(!appId) alert('appId 为空，请检查程序是否正确初始化。')*/
+    /*if(!appId) alert('appId 为空，请检查程序是否正确初始化。')*/
     if(/\?/.test(config.url)){
       config.url += `&appId=${appId}`
     }else{

@@ -2,6 +2,8 @@
     <div>
         <!-- 注意：路由表不能配置在后端，不然前端无法配置跳转到某些路由，例如提交成功后返回至某个固定路由 lss 2017-6-27 -->
         <!-- 菜单权限json（调试专用）：==={{ routes | json }} -->
+
+        <!-- 后期改为动态路由（但是使用aync时 刷新会导致404） -->
         <template v-if="routes">
             <!-- 一级菜单 示例-->
            <!--  <router-link  to="/index/readme"  v-if="routes['/index/readme']" >
@@ -142,6 +144,18 @@
                         </el-menu-item>
                     </router-link> -->
                     
+               
+            </el-submenu>
+            <el-submenu index="机构管理" > 
+                <template slot="title">
+                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> 机构管理
+                </template>
+                    <router-link  class="menu-indent" to="/orgManage/orgManager" >
+                        <el-menu-item index="/orgManage/orgManager">
+                            机构列表
+                        </el-menu-item>
+                    </router-link>
+                   
                
             </el-submenu>
 

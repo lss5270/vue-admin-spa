@@ -44,6 +44,9 @@ const StudentList = _import('student/studentInfo/index');
 const StudentAdd = _import('student/studentInfo/modal/studentAdd'); /*新增修改后期改成同一个弹窗*/
 const StudentUpdate = _import('student/studentInfo/modal/studentUpdate');
 
+/* 机构管理*/
+const OrgManager = _import('org-manage/org-manager/index');
+
 Vue.use(Router);
 
  /**
@@ -119,7 +122,7 @@ const constantRouterMap = [
       { path: 'permissionsManage', component: PermissionsManage, name: '权限管理' },
       
     ]
-  },
+  },  
   {
     path: '/studentsManage',
     component: Layout,
@@ -133,7 +136,16 @@ const constantRouterMap = [
       
     ]
   },
-  
+  {
+    path: '/orgManage',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '机构管理',
+    children: [
+      { path: 'orgManager', component: OrgManager, name: '机构列表' },
+     
+    ]
+  },
   {
     path: '/example',
     component: Layout,
