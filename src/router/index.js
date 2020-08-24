@@ -40,9 +40,9 @@ const Mixin = _import('example/mixin');
 /* 系统管理*/
 const PermissionsManage = _import('systemSet/permissionsManage');
 /* 学生管理*/
-const StudentList = _import('student/studentList');
-const StudentAdd = _import('student/studentAdd');
-const StudentUpdate = _import('student/studentUpdate');
+const StudentList = _import('student/studentInfo/index');
+const StudentAdd = _import('student/studentInfo/modal/studentAdd'); /*新增修改后期改成同一个弹窗*/
+const StudentUpdate = _import('student/studentInfo/modal/studentUpdate');
 
 Vue.use(Router);
 
