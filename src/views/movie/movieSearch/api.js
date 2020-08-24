@@ -5,7 +5,7 @@ export async function getTableData(params) {
 }
 
 export async function updateState(params) {
-  const url = `${process.env.VUE_APP_JCHL_API}/gateway/org/back/institutionService/logicDelIns`
+  const url = `${process.env.VUE_APP_XXX_API}/gateway/org/back/institutionService/logicDelIns`
   return await postAwait(url, params)
 }
 
