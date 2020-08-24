@@ -30,7 +30,7 @@ const TableList = _import('example/tableList');
 
 // 豆瓣电影
 const NewMovie = _import('movie/newMovie');
-const MovieSearch = _import('movie/movieSearch');
+const MovieSearch = _import('movie/movieSearch/index');
 
 
 const Form = _import('example/form');

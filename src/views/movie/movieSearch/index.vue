@@ -154,6 +154,9 @@
 import {global} from 'src/global/global';
 import {api} from 'src/global/api';
 
+//2020-0824
+import { getTableData, } from "./api";
+
 export default {
   data() {
     return {
@@ -201,7 +204,7 @@ export default {
   },
   methods: {
     //获取列表数据
-    getList() {
+    async getList() {
         var vm = this;
 
         vm.listLoading = true;
@@ -213,6 +216,10 @@ export default {
             "q": vm.listQuery.name,         //明星、导演姓名
             "tag": vm.listQuery.type,       //类型
         };
+
+        /*const res = await getTableData(par);
+        
+        return false;*/
         // jsonp请求方式
         vm.$http.jsonp('https://api.douban.com/v2/movie/search',{params: par}).then(res => {
             console.log(res)
