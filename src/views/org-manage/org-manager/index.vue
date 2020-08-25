@@ -64,7 +64,7 @@
             <el-table-column
               prop="contact"
               label="联系人"
-              width="100"
+              width="150"
             >
             </el-table-column>
             <el-table-column
@@ -92,15 +92,15 @@
               label="操作"
               width="160"
             >
-              <!-- <template slot-scope="scope">
+              <template slot-scope="scope">
                 <el-switch
-                  :value="scope.row.isValid=='Y'"
+                  :value="scope.row.isValid"
                   @change="updateState($event,scope.row)"
                 >
                 </el-switch> 
                 <i class="el-icon-edit-outline icon-operate-st1" style="" title="编辑" @click="editOrg(scope.row)"></i>
                 <i class="el-icon-question icon-operate-st1" style="" title="查看部门" @click="gotoUserdep(scope.row)"></i>
-              </template> -->
+              </template>
 	  					    	 	
             </el-table-column>
           </el-table>
@@ -246,14 +246,22 @@ export default {
 	    },
 	    //	启用禁用 状态更新
 	    async updateState(v, row) {
-	    	const par = { 'insId': row.insId, 'isValid': v ? 'N' : 'Y' }
+        // 实际开发逻辑
+	    	/*const par = { 'insId': row.insId, 'isValid': v }
 	    	
         const res = await updateState(par);
     		this.getTableData()
     		this.$message({
 		        message: res.head.errorMsg,
 		        type: 'success'
-	        })
+	        })*/
+
+        // 假逻辑 lss 2020-08-25
+        row.isValid = v
+        this.$message({
+            message: '状态更新成功',
+            type: 'success'
+          })
 	    },
 	    // 新增机构
 	    addOrg() {
@@ -265,14 +273,20 @@ export default {
   		},
 	    // 编辑机构
 	    async editOrg(item) {
-        // this.$refs['orgForm'].resetFields()
-  		  const par = { 'insId': item.insId }
+        // 实际开发逻辑
+  		  /*const par = { 'insId': item.insId }
   		  
         const res = await queryIns(par);
       	this.orgForm = res.body
 
 	    	this.orgDialogTitle = '组织机构修改'
-	    	this.orgDialogVisible = true
+	    	this.orgDialogVisible = true*/
+
+        // 假逻辑 lss 2020-08-25
+        this.orgForm = item
+
+        this.orgDialogTitle = '组织机构修改'
+        this.orgDialogVisible = true
 	    },
 	    
 	    //	提交机构表单
