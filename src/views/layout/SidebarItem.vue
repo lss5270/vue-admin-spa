@@ -148,7 +148,7 @@
             </el-submenu>
             <el-submenu index="机构管理" > 
                 <template slot="title">
-                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> 机构管理
+                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> 机构管理(mock数据)
                 </template>
                     <router-link  class="menu-indent" to="/orgManage/orgManager" >
                         <el-menu-item index="/orgManage/orgManager">

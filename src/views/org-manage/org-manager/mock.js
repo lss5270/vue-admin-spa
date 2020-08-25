@@ -20,7 +20,10 @@ Mock.mock(
                     'insName': '@cname()',
                     'typeId': '@string(5)',
                     'contact': '@name()',
-                    //'phone': Random.cname(),
+                    'phone': '@email()',
+                    'insManager': '@clast()',
+                    'insManagerPhone': '@cword("1234567890", 11, 11)',
+                    'isValid|1-2': true,
                 }
             ]
         })
