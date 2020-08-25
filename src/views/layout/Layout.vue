@@ -11,6 +11,7 @@
 </template>
 
 <script>
+    import Vue from 'vue';
     import { Navbar, Sidebar, AppMain } from 'views/layout';
 
     export default {
@@ -20,11 +21,31 @@
         Sidebar,
         AppMain
       },
+      provide () {
+        return {
+          provObj: new Vue({ data () {
+            return { tableHeight: 330 }
+          } })
+        }
+      },
       computed: {
         sidebar() {
           return this.$store.state.app.sidebar;
         }
-      }
+      },
+      mounted() {
+        // 后续抽取到store中，每个页面通过store引入。因当前vue的store被抽取出去，个人没法添加公共模块，所以只能暂时使用provide方式
+        this.$nextTick(function () {
+          const vm = this;
+          // this.tableHeight0 = window.innerHeight - 310 +'px';
+          vm._provided.provObj.tableHeight = window.innerHeight - 240 //+ 'px'
+          // 监听窗口大小变化
+          window.onresize = function() {
+            // vm.tableHeight0 = window.innerHeight - 310 +'px'
+            vm._provided.provObj.tableHeight = window.innerHeight - 240 //+ 'px'
+          }
+        })
+      },
     }
 </script>
 
@@ -53,7 +74,7 @@
             }
         }
         .sidebar-wrapper {
-            width: 180px;
+            width: 220px;
             position: fixed;
             top: 0;
             bottom: 0;
@@ -74,7 +95,7 @@
         .main-container {
             min-height: 100%;
             transition: all .28s ease-out;
-            margin-left: 180px;
+            margin-left: 220px;
         }
     }
 </style>

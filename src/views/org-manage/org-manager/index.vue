@@ -75,7 +75,7 @@
             <el-table-column
               prop="insManager"
               label="机构管理员"
-              width="100"
+              width="120"
             >
             </el-table-column>
             <el-table-column
@@ -157,7 +157,7 @@ export default {
     		filterPar: {
         	searchCondition: '',
         },
-        // tableHeight: this.provObj.tableHeight,
+        
         tableData: [],
         tableDataLoading: false,
         paginationPar: {
@@ -183,14 +183,14 @@ export default {
     inject: ['provObj'],
     computed: {
       tableHeight() {
-        return '550px'
-        //return this.provObj.tableHeight
+        //return '550px'
+        return this.provObj.tableHeight
       }
     },
     
     mounted() {
     	this.getTableData()
-
+      
     	// this.getDicArr(this.dicArr)
     	// 获取字典
     	/*const dicArr0 = getDicArr(this.dicArr).then((res) => {
@@ -316,9 +316,147 @@ export default {
 </script>
 
 <style lang="scss" >
-	.table-filter{
-    .el-input{
-      width: 200px;
+	
+  /* 页面公用样式后面要移到page.css中 */
+  .fl {
+    float: left;
+  }
+
+  .fr {
+    float: right;
+  }
+
+  .lss-form {
+
+    /* label,.form-label{
+      width: 120px;
+    } */
+    .el-select {
+      width: 100%;
     }
+  }
+
+  .app-wrapper {
+    .app-main {
+      .el-scrollbar {
+        background-color: inherit !important;
+        border          : none !important;
+
+        .el-scrollbar__view {
+          height: 100%;
+
+          .page-layout {
+            // padding-top:10px;
+            width         : 100%;
+            border        : none;
+            height        : 100%;
+
+            .table-box {
+              .el-table {
+                border-left: none;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+
+  .box-flex {
+    width         : 100%;
+    height        : 100%;
+    display       : flex;
+    flex-direction: row;
+    flex          : auto;
+    overflow      : auto;
+  }
+
+  .border-gray {
+    border: 1px solid #e8e8e8;
+  }
+
+  .icon-st1 {
+    font-size    : 18px;
+    /* width     : 30px;
+    height       : 30px; */
+    border       : 1px solid #c2c2c2;
+    border-radius: 4px;
+    cursor       : pointer;
+    margin-right : 8px;
+    padding      : 4px;
+
+    &:hover {
+      color : #0066b3;
+      border: 1px solid #0066b3;
+    }
+  }
+
+  .icon-operate-st1 {
+    font-size     : 26px;
+    vertical-align: middle;
+    margin        : 0 5px;
+    cursor        : pointer;
+
+    &:hover {
+      color: #53acf3;
+    }
+  }
+
+  .lss-tree-box {
+    padding: 10px 0;
+
+    .el-tree {
+      max-height: 500px;
+      overflow  : auto;
+    }
+
+  }
+
+  .page-left {
+    box-sizing    : border-box;
+    width         : 200px;
+    flex          : 0 0 200px;
+    flex-direction: column;
+    margin-right  : 6px;
+    background    : #fff;
+
+    .page-left-title {
+      line-height  : 48px;
+      padding      : 0 10px;
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+
+  .page-right {
+    box-sizing    : border-box;
+    display       : flex;
+    flex-direction: column;
+    flex          : auto;
+    overflow      : hidden;
+    background    : #fff;
+
+    .table-filter {
+      padding: 10px;
+
+      .el-input {
+        width: 210px;
+      }
+
+      .table-filter-btn {
+        /*float: right;*/
+      }
+    }
+
+    .pagination-box {
+      text-align: right;
+      padding   : 15px;
+    }
+
+    .td-nowrap {
+      white-space: nowrap;
+    }
+
   }
 </style>
