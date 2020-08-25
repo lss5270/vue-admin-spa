@@ -1,7 +1,7 @@
 # 后台管理系统 vue-admin-spa 1.0（qq交流群：645582193，找不到群可以咨询QQ81438234） #
 使用到的技术栈：vue + vue-resource + vue-router + vuex(spa必备) + element-ui + ES6 + webpack + npm 
 
-[测试地址](https://lss5270.github.io/vue-admin-spa-demo)
+[测试地址](https://lss5270.github.io/vue-admin-spa-demo) （最近好像运营商封锁网络，如果无法打开，可将 DNS 修改为 114.114.114.114 即可）
 
 <!-- ## 注意：最近多人多反应项目无法正常运行，是因为升级node到最新版的8.x版本导致的。请换回使用6.0~6.11之间的稳定版即可，node版本可自行下载，也可到我下方的群里下载 ~！ -->
 ## 前言
