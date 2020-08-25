@@ -31,11 +31,11 @@
               label="组织机构代码"
               min-width="120"
             >
-              <!-- <template slot-scope="scope">
+              <template slot-scope="scope">
                 <div class="td-nowrap" :title="scope.row.organizationCode">
                   {{ scope.row.organizationCode }}
                 </div>
-              </template> -->
+              </template>
             </el-table-column>
 
             <el-table-column
@@ -43,22 +43,23 @@
               label="机构名称"
               min-width="160"
             >
-              <!-- <template slot-scope="scope">
+              <template slot-scope="scope">
                 <div class="td-nowrap" :title="scope.row.insName">
                   {{ scope.row.insName }}
                 </div>
-              </template> -->
+              </template>
             </el-table-column>
             <el-table-column
   					      
               label="机构类型"
               width="100"
             >
-              <!-- <template slot-scope="scope">
+              <template slot-scope="scope">
                 <div class="td-nowrap" :title="scope.row.typeId">
-                  {{ scope.row.typeId | insTypeFormat }}
+                  {{ scope.row.typeId }}
+                  <!-- {{ scope.row.typeId | insTypeFormat }} -->
                 </div>
-              </template> -->
+              </template>
             </el-table-column>
             <el-table-column
               prop="contact"
@@ -204,29 +205,7 @@ export default {
 	    vm0 = this
     },
     methods: {
-	    /* //	获取字典集合
-	    getDicArr(dicArr) {
-	    	let vm = this
-	    	for(let key in dicArr){
-	    		this.getItemsByDicCode(key)
-	    	}
-	    },
-	    //	根据code获取字典
-	    async getItemsByDicCode(dicCode) {
-	    	let vm = this
-	    	let par = {"dicCode": dicCode, "interceptConfigAll": true}
-	    	const res = await postAwait(`${process.env.VUE_APP_JCHL_API}/gateway/system/back/sysDicItemService/sysDicItemByCodes`, par)
-	    	if(res.body){
-	    		this.formatDicItem( dicCode, res.body['dic_'+dicCode])
-	    	}
-	    },
-	    //	解析格式化 单个字典，并组装
-	    formatDicItem(dicCode,dicValue) {
-	    	console.log(dicCode,'-----',JSON.parse(dicValue) )
-	    	let vm = this
-	    	this.dicArr[dicCode] = JSON.parse(dicValue)
-	    	//console.log(this.dicArr)
-	    },*/
+	    
 		  // 	分页
 	    handleSizeChange(val) {
 	    	console.log(`每页 ${val} 条`)
@@ -246,13 +225,16 @@ export default {
 	    	const paginationPar = this.paginationPar
 	    	const filterPar = this.filterPar
 	    	const par = { ...paginationPar, ...filterPar, }// "pageIndex":1,"start":0,"pageSize":20,
-	    	// const res = await postAwait(`${process.env.VUE_APP_JCHL_API}/gateway/org/back/institutionService/query`, par)
+	    	
         const res = await getTableData(par);
-	    	if (res.body){
+        debugger
+	    	/*if (res.body){
 	    		this.tableDataLoading = false
     			this.tableData = res.body.data
     			this.paginationPar = res.body.pager
-	    	}
+	    	}*/
+        this.tableDataLoading = false
+        this.tableData = res.data.array
 	    },
 	    clearFilter() {
         this.filterPar = {
@@ -265,7 +247,7 @@ export default {
 	    //	启用禁用 状态更新
 	    async updateState(v, row) {
 	    	const par = { 'insId': row.insId, 'isValid': v ? 'N' : 'Y' }
-	    	// const res = await postAwait(`${process.env.VUE_APP_JCHL_API}/gateway/org/back/institutionService/logicDelIns`, par)
+	    	
         const res = await updateState(par);
     		this.getTableData()
     		this.$message({
@@ -285,7 +267,7 @@ export default {
 	    async editOrg(item) {
         // this.$refs['orgForm'].resetFields()
   		  const par = { 'insId': item.insId }
-  		  // const res = await postAwait(`${process.env.VUE_APP_JCHL_API}/gateway/org/back/institutionService/queryIns`, par)
+  		  
         const res = await queryIns(par);
       	this.orgForm = res.body
 
@@ -295,7 +277,7 @@ export default {
 	    
 	    //	提交机构表单
       async submitOrgForm() {
-      	// const res = await postAwait(`${process.env.VUE_APP_JCHL_API}/gateway/org/back/institutionService/addIns`, this.orgForm)
+      	
         const res = await submitOrgForm(this.orgForm);
   		  this.$message({
 	        message: res.head.errorMsg,

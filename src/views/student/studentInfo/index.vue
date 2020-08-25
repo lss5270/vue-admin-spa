@@ -32,26 +32,26 @@
          </el-table-column>
 
           <el-table-column align="center" label='序号' width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.$index}}
             </template>
           </el-table-column>
 
           <el-table-column label="学生姓名" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.row.studentName}}
             </template>
           </el-table-column>
 
           <el-table-column label="性别" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <span v-if="scope.row.sex == 'man'">男</span>
               <span v-else>女</span>
             </template>
           </el-table-column>
 
           <el-table-column label="民族"  align="center" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <span v-if="scope.row.minzu == '10010' ">汉族</span>
               <span v-if="scope.row.minzu == '10011' ">壮族</span>
               <span v-if="scope.row.minzu == '10012' ">奶佬族</span>
@@ -60,7 +60,7 @@
           </el-table-column>
 
           <el-table-column align="center" prop="created_at" label="二级学院" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <span v-if="scope.row.xueyuan == '40010' ">文学院</span>
               <span v-if="scope.row.xueyuan == '40011' ">外国语学院</span>
               <span v-if="scope.row.xueyuan == '40013' ">法学院</span>
@@ -70,20 +70,20 @@
           </el-table-column>
 
             <el-table-column align="center"  label="入校时间" >
-                <template scope="scope">
+                <template slot-scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span>{{scope.row.ruxiaodate}}</span>
                 </template>
             </el-table-column>
 
             <el-table-column align="center"  label="家庭住址" >
-                <template scope="scope">
+                <template slot-scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span>{{scope.row.address}}</span>
                 </template>
             </el-table-column>
              <el-table-column align="center"  label="是否全日制" >
-                <template scope="scope">
+                <template slot-scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span v-if="scope.row.quanrizhi">是</span>
                   <span v-else>否</span>
@@ -92,7 +92,7 @@
             </el-table-column>
 
             <el-table-column align="center"  label="操作" >
-                <template scope="scope">
+                <template slot-scope="scope">
                     
                    <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                    <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>

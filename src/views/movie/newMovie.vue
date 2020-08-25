@@ -10,13 +10,13 @@
          </el-table-column>
 
           <el-table-column align="center" label='序号' width="70" >
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ scope.$index+1 }}
             </template>
           </el-table-column>
 
             <el-table-column label="海报" width="" align="center">
-            <template scope="scope">
+            <template slot-scope="scope">
                 <a target="_blank" :href="scope.row.alt" class="" style="margin: 10px 0;display: inline-block;">
                     <img :src="scope.row.images.small" alt="" style="vertical-align: middle;max-width: 100%;">
                 </a>
@@ -25,20 +25,20 @@
           </el-table-column>
 
           <el-table-column label="名称" width="" prop="title" sortable>
-            <template scope="scope">
+            <template slot-scope="scope">
                
               {{ scope.row.title }}
             </template>
           </el-table-column>
 
             <el-table-column label="导演" width="" prop="directors[0].alt" sortable>
-            <template scope="scope">
+            <template slot-scope="scope">
               <a target="_blank" :href="scope.row.directors[0].alt">{{scope.row.directors[0].name}}</a>
             </template>
           </el-table-column>
 
           <el-table-column label="主演" width="">
-            <template scope="scope" >
+            <template slot-scope="scope" >
                 <template class="" v-for="item in scope.row.casts">
                     <p><a target="_blank" :href="item.alt">&nbsp;{{ item.name }}&nbsp;</a>、</p>
                 </template>
@@ -48,33 +48,33 @@
 
 
           <el-table-column label="类型" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <span>{{scope.row.genres}}</span>
             </template>
           </el-table-column>
 
           <el-table-column label="综合评分"  align="center" width=""  prop="rating.average" sortable >
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.row.rating.average}}
             </template>
           </el-table-column>
 
           <el-table-column align="center" prop="created_at" label="收藏量" width=""   >
-            <template scope="scope">
+            <template slot-scope="scope">
               
               <span>{{scope.row.collect_count}}</span>
             </template>
           </el-table-column>
 
             <el-table-column align="center"  label="上映年份" prop="year" sortable >
-                <template scope="scope">
+                <template slot-scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span>{{scope.row.year}}</span>
                 </template>
             </el-table-column>
 
             <el-table-column align="center"  label="操作" >
-                <template scope="scope">
+                <template slot-scope="scope">
                     
                    <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                    <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>

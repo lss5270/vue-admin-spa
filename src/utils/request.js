@@ -22,12 +22,12 @@ service.interceptors.request.use(
     //const appId = Cookies.get('tax-app-id')
     const appId = sessionStorage['appId']
     /*if(!appId) alert('appId 为空，请检查程序是否正确初始化。')*/
-    if(/\?/.test(config.url)){
+    /*if(/\?/.test(config.url)){
       config.url += `&appId=${appId}`
     }else{
       config.url += `?appId=${appId}`
     }
-    config.url += `&requestId=${requestId}`
+    config.url += `&requestId=${requestId}`*/
     // do something before request is sent
     /*if (store.getters.tax_token) {
       // let each request carry token

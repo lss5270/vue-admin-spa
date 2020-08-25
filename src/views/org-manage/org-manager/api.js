@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+	require("./mock");
+}
+
 import { getAwait, postAwait } from '@/utils/request'
 
 export async function getTableData(params) {

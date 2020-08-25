@@ -28,45 +28,45 @@
          </el-table-column>
 
           <el-table-column align="center" label='序号' width="100">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.$index}}
             </template>
           </el-table-column>
 
           <el-table-column label="字段1" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.row.chnlId}}
             </template>
           </el-table-column>
 
           <el-table-column label="字段2" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <span>{{scope.row.hisChnlId}}</span>
             </template>
           </el-table-column>
 
           <el-table-column label="字段3"  align="center" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.row.chnlName}}
             </template>
           </el-table-column>
 
           <el-table-column align="center" prop="created_at" label="字段4" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               <!-- <i class="el-icon-time"></i> -->
               <span>{{scope.row.state}}</span>
             </template>
           </el-table-column>
 
             <el-table-column align="center"  label="字段5" >
-                <template scope="scope">
+                <template slot-scope="scope">
                   <!-- <i class="el-icon-time"></i> -->
                   <span>{{scope.row.orderNum}}</span>
                 </template>
             </el-table-column>
 
             <el-table-column align="center"  label="操作" >
-                <template scope="scope">
+                <template slot-scope="scope">
                     
                    <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                    <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>

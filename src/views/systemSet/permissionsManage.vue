@@ -15,19 +15,19 @@
          </el-table-column>
 
           <el-table-column align="center" label='序号' width="100">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.$index}}
             </template>
           </el-table-column>
 
           <el-table-column label="角色" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{scope.row.smRoleBeanDto.roleName}}
             </template>
           </el-table-column>
 
           <el-table-column label="对应用户" width="">
-            <template scope="scope">
+            <template slot-scope="scope">
                <template v-for="item in scope.row.userbaseinfoList">
                     <span >{{ item.userName  }} &nbsp; &nbsp;</span>
                </template >
@@ -38,7 +38,7 @@
           
 
             <el-table-column align="center"  label="操作" >
-                <template scope="scope">
+                <template slot-scope="scope">
                     <el-button icon="edit" size="small" @click="setPermissions(scope.$index, scope.row)" >设置权限</el-button>
                     <el-button icon="edit" size="small" @click="setUser(scope.$index, scope.row)">设置成员</el-button>
                    <el-button icon="edit" size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
