@@ -1,4 +1,4 @@
-# 后台管理系统 vue-admin-spa 1.0（qq交流群：645582193，找不到群可以咨询QQ81438234） #
+# 后台管理系统 vue-admin-spa 1.0（注意：本项目已停更，如有需要可以看[最新vue3.0版本](https://github.com/lss5270/vue-manage-system-plus) ） #
 使用到的技术栈：vue + vue-resource + vue-router + vuex(spa必备) + element-ui + ES6 + webpack + npm 
 
 [测试地址](https://lss5270.github.io/vue-admin-spa-demo) （最近好像运营商封锁网络，如果无法打开，可将 DNS 修改为 114.114.114.114 即可）
