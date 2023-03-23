@@ -1,4 +1,4 @@
-# 后台管理系统 vue-admin-spa（注意：本项目已停更，如有需要可以前往[最新vue3.0版本](https://github.com/lss5270/vue-manage-system-plus) ） #
+# 后台管理系统 vue-admin-spa（注意：本项目已停更，如有需要可以前往[最新vue3.0版本，功能更多、更全](https://github.com/lss5270/vue-manage-system-plus) ） #
 使用到的技术栈：vue + vue-resource + vue-router + vuex(spa必备) + element-ui + ES6 + webpack + npm 
 
 [测试地址](https://lss5270.github.io/vue-admin-spa-demo) （如果无法打开，可尝试将 DNS 修改为 114.114.114.114 即可）
